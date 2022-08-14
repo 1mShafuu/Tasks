@@ -18,16 +18,12 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(points.childCount);
         _spawnPoints = new List<Transform>();
 
         for (int index = 0; index < points.childCount; index++)
         {
             _spawnPoints.Add(points.GetChild(index));
-            Debug.Log(_spawnPoints[index]);
         }
-        Debug.Log( "Spawnpoints"+_spawnPoints.Count);
-
     }
 
     private void OnMouseDown()
