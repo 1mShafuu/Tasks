@@ -1,0 +1,2172 @@
+fileFormatVersion: 2
+guid: 25872b3d4d15cfb40a43187adcffd1c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3094332199918216529
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_0
+  - first:
+      213: -9033960238663371640
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_1
+  - first:
+      213: 6861992220298887046
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_2
+  - first:
+      213: 1698446513351607910
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_3
+  - first:
+      213: 1445435779516725930
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_4
+  - first:
+      213: -2692149539100918680
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_5
+  - first:
+      213: -2923717281125131267
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_6
+  - first:
+      213: -5522284136949437568
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_7
+  - first:
+      213: -4358496374244161344
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_8
+  - first:
+      213: -490811511164163197
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_9
+  - first:
+      213: 4660353034175113659
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_10
+  - first:
+      213: 7086774048579039915
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_11
+  - first:
+      213: 7730463397594916568
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_12
+  - first:
+      213: 5811309126764457776
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_13
+  - first:
+      213: 3986984056328315021
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_14
+  - first:
+      213: -5516367719928918861
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_15
+  - first:
+      213: 7711230782329220326
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_16
+  - first:
+      213: 2804261701766912660
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_17
+  - first:
+      213: 2370820113736738219
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_18
+  - first:
+      213: 3460891821787340254
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_19
+  - first:
+      213: -8751504182426435734
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_20
+  - first:
+      213: 8336575263559042148
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_21
+  - first:
+      213: 632973201277170370
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_22
+  - first:
+      213: 851204515309046158
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_23
+  - first:
+      213: -5573827460974439834
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_24
+  - first:
+      213: -1643457595433648475
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_25
+  - first:
+      213: -6486263300746157942
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_26
+  - first:
+      213: 448582883904530255
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_27
+  - first:
+      213: -8962596094645476378
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_28
+  - first:
+      213: 4265502479505939589
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_29
+  - first:
+      213: 3578845051478431476
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_30
+  - first:
+      213: 2776171593507989952
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_31
+  - first:
+      213: 8037945866408775591
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_32
+  - first:
+      213: -3851723671692269629
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_33
+  - first:
+      213: -5941869639433557767
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_34
+  - first:
+      213: -7659629985010506348
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_35
+  - first:
+      213: -6362200362616680668
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_36
+  - first:
+      213: -2254679490296810081
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_37
+  - first:
+      213: 1109111566680259113
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_38
+  - first:
+      213: -6765451389984450007
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_39
+  - first:
+      213: 2843177014159831859
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_40
+  - first:
+      213: -7931661324105754969
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_41
+  - first:
+      213: -6225303782842760104
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_42
+  - first:
+      213: 3395696911598789671
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_43
+  - first:
+      213: 3644294450425029428
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_44
+  - first:
+      213: -4169783353201773121
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_45
+  - first:
+      213: -1513144543951946998
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_46
+  - first:
+      213: -6414356013093188765
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_47
+  - first:
+      213: -3549374269881980645
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_48
+  - first:
+      213: 3530793751962971856
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_49
+  - first:
+      213: -1810059155477062784
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_50
+  - first:
+      213: -5013777365367572067
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_51
+  - first:
+      213: 3448242032821867884
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_52
+  - first:
+      213: -628776144717899667
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_53
+  - first:
+      213: 7421914644070473557
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_54
+  - first:
+      213: -4653481762994065624
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_55
+  - first:
+      213: -4868633598643493296
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_56
+  - first:
+      213: 3444974732416477833
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_57
+  - first:
+      213: -820133089146793223
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_58
+  - first:
+      213: 7865849144640066414
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_59
+  - first:
+      213: 5859833770705928363
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_60
+  - first:
+      213: 5179117452241865138
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_61
+  - first:
+      213: 5505531464072978822
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_62
+  - first:
+      213: 5452305674039996393
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_63
+  - first:
+      213: 4556899080781865082
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_64
+  - first:
+      213: 6293079655063704619
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_65
+  - first:
+      213: 5047185527211133113
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_66
+  - first:
+      213: -2173647317585449687
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_67
+  - first:
+      213: 3860908202969099530
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_68
+  - first:
+      213: -1634497003766832841
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_69
+  - first:
+      213: 3332940464852846180
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_70
+  - first:
+      213: -6973463895836102952
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_71
+  - first:
+      213: 7764471716720506858
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_72
+  - first:
+      213: -4820653677818535626
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_73
+  - first:
+      213: 5291244647627074811
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_74
+  - first:
+      213: -2144661282740509793
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_75
+  - first:
+      213: 5544496014158935914
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_76
+  - first:
+      213: 2939422498332487346
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_77
+  - first:
+      213: 8645078160429527056
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_78
+  - first:
+      213: -3372399471214977278
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_79
+  - first:
+      213: -2713152421402950763
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_80
+  - first:
+      213: -1405212627759071448
+    second: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_81
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 744
+        width: 46
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 155ad29cdb641fa20800000000000000
+      internalID: 3094332199918216529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_1
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 744
+        width: 45
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8847773e60de0a280800000000000000
+      internalID: -9033960238663371640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 745
+        width: 45
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fb8666191ba3f50800000000000000
+      internalID: 6861992220298887046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_3
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 745
+        width: 45
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666c25aea18129710800000000000000
+      internalID: 1698446513351607910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_4
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 745
+        width: 46
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaafbb7ee283f0410800000000000000
+      internalID: 1445435779516725930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_5
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 745
+        width: 46
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c78aff14093aad0800000000000000
+      internalID: -2692149539100918680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_6
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 745
+        width: 45
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb9dd29f9edc67d0800000000000000
+      internalID: -2923717281125131267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_7
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 745
+        width: 45
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08baa54f5d7ec53b0800000000000000
+      internalID: -5522284136949437568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_8
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 666
+        width: 41
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c84952d3a28383c0800000000000000
+      internalID: -4358496374244161344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_9
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 666
+        width: 46
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b2361f7894039f0800000000000000
+      internalID: -490811511164163197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_10
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 666
+        width: 56
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9ebe99466eca040800000000000000
+      internalID: 4660353034175113659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_11
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 667
+        width: 54
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2b2092377495260800000000000000
+      internalID: 7086774048579039915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_12
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 666
+        width: 49
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d6edca908f184b60800000000000000
+      internalID: 7730463397594916568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_13
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 667
+        width: 53
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03fe7c47cdae5a050800000000000000
+      internalID: 5811309126764457776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_14
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 667
+        width: 56
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d80689210ec945730800000000000000
+      internalID: 3986984056328315021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_15
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 667
+        width: 46
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc843329cce173b0800000000000000
+      internalID: -5516367719928918861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_16
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 667
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec6ac96a8bc30b60800000000000000
+      internalID: 7711230782329220326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_17
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 587
+        width: 42
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a9c0ff82dbae620800000000000000
+      internalID: 2804261701766912660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_18
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 587
+        width: 46
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba521a11558d6e020800000000000000
+      internalID: 2370820113736738219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_19
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 587
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd50bb76ce870030800000000000000
+      internalID: 3460891821787340254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_20
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 587
+        width: 49
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f702440596c8680800000000000000
+      internalID: -8751504182426435734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_21
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 587
+        width: 43
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 464cebb780771b370800000000000000
+      internalID: 8336575263559042148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_22
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 515
+        width: 39
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c2b77ed5c5c8c800800000000000000
+      internalID: 632973201277170370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_23
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 509
+        width: 43
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89443e2ff510db00800000000000000
+      internalID: 851204515309046158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_24
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 508
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6621d45a479c5a2b0800000000000000
+      internalID: -5573827460974439834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_25
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 506
+        width: 69
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae72cc36044139e0800000000000000
+      internalID: -1643457595433648475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_26
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 507
+        width: 69
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a806f57c4e92cf5a0800000000000000
+      internalID: -6486263300746157942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_27
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 507
+        width: 70
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f47237791cfa93600800000000000000
+      internalID: 448582883904530255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_28
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 506
+        width: 50
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e36a5976567e9380800000000000000
+      internalID: -8962596094645476378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_29
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 506
+        width: 49
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cdf7fc7eb123b30800000000000000
+      internalID: 4265502479505939589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_30
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 434
+        width: 39
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6598fdc9c9aa130800000000000000
+      internalID: 3578845051478431476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_31
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 429
+        width: 38
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9e2920b51f68620800000000000000
+      internalID: 2776171593507989952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_32
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 429
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af4d1bbd258c8f60800000000000000
+      internalID: 8037945866408775591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_33
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 427
+        width: 69
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c7a1d75abdeb8ac0800000000000000
+      internalID: -3851723671692269629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_34
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 427
+        width: 69
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f862e75b0d3a8da0800000000000000
+      internalID: -5941869639433557767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_35
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 428
+        width: 70
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 495a4807c1783b590800000000000000
+      internalID: -7659629985010506348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_36
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 431
+        width: 40
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f0f548a7ce4b7a0800000000000000
+      internalID: -6362200362616680668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_37
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 431
+        width: 40
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95ff7a03f4c5b0e0800000000000000
+      internalID: -2254679490296810081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_38
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 351
+        width: 40
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92af044f71b546f00800000000000000
+      internalID: 1109111566680259113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_39
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 351
+        width: 38
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92addc24ec94c12a0800000000000000
+      internalID: -6765451389984450007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_40
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 347
+        width: 34
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3337d8a3e6ef47720800000000000000
+      internalID: 2843177014159831859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_41
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 347
+        width: 35
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6d8f9ac041de190800000000000000
+      internalID: -7931661324105754969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_42
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 351
+        width: 35
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85403cc41374b99a0800000000000000
+      internalID: -6225303782842760104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_43
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 351
+        width: 35
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 724acb49950ff1f20800000000000000
+      internalID: 3395696911598789671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_44
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 347
+        width: 36
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 433e28e8e72239230800000000000000
+      internalID: 3644294450425029428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_45
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 347
+        width: 38
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb5321af124f126c0800000000000000
+      internalID: -4169783353201773121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_46
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 269
+        width: 43
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0b7ce3ed0b300be0800000000000000
+      internalID: -1513144543951946998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_47
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 269
+        width: 42
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b80b8d031abf6a0800000000000000
+      internalID: -6414356013093188765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_48
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 269
+        width: 41
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b19e5cc28e61ebec0800000000000000
+      internalID: -3549374269881980645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_49
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 269
+        width: 42
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0deebe0e536eff030800000000000000
+      internalID: 3530793751962971856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_50
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 269
+        width: 43
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08b9857c9c061e6e0800000000000000
+      internalID: -1810059155477062784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_51
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 269
+        width: 42
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d993f52ec0c7b6ab0800000000000000
+      internalID: -5013777365367572067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_52
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 269
+        width: 40
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c651be9fbdd9adf20800000000000000
+      internalID: 3448242032821867884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_53
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 269
+        width: 43
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6899d28d632647f0800000000000000
+      internalID: -628776144717899667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_54
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 188
+        width: 46
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f1719bb00fff660800000000000000
+      internalID: 7421914644070473557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_55
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 187
+        width: 45
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82feaf3edf28b6fb0800000000000000
+      internalID: -4653481762994065624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_56
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 188
+        width: 43
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 056a25389832f6cb0800000000000000
+      internalID: -4868633598643493296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_57
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 188
+        width: 43
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a61e154420fcf20800000000000000
+      internalID: 3444974732416477833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_58
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 188
+        width: 45
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f29cd8fc4d4e94f0800000000000000
+      internalID: -820133089146793223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_59
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 187
+        width: 43
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e63d41b3f1c192d60800000000000000
+      internalID: 7865849144640066414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_60
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 188
+        width: 44
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba0c3c984cf425150800000000000000
+      internalID: 5859833770705928363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_61
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 187
+        width: 43
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b907e6f1ebefd740800000000000000
+      internalID: 5179117452241865138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_62
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 111
+        width: 44
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6816ecf62b3976c40800000000000000
+      internalID: 5505531464072978822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_63
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 114
+        width: 42
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef200c7f1b7aab40800000000000000
+      internalID: 5452305674039996393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_64
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 114
+        width: 42
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a70ae4b029b5d3f30800000000000000
+      internalID: 4556899080781865082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_65
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 112
+        width: 43
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b245f47aa92855750800000000000000
+      internalID: 6293079655063704619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_66
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 110
+        width: 43
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b889e0fe743b0640800000000000000
+      internalID: 5047185527211133113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_67
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 111
+        width: 43
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92da658f747a5d1e0800000000000000
+      internalID: -2173647317585449687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_68
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 114
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0d6d5cfd83b49530800000000000000
+      internalID: 3860908202969099530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_69
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 114
+        width: 44
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 731a90092a91159e0800000000000000
+      internalID: -1634497003766832841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_70
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 112
+        width: 43
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4664411b1bbf04e20800000000000000
+      internalID: 3332940464852846180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_71
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 110
+        width: 42
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8de6da2a887493f90800000000000000
+      internalID: -6973463895836102952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_72
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 31
+        width: 42
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae771bf63e1f0cb60800000000000000
+      internalID: 7764471716720506858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_73
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 34
+        width: 41
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631227c5509991db0800000000000000
+      internalID: -4820653677818535626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_74
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 34
+        width: 40
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfcaf7909f64e6940800000000000000
+      internalID: 5291244647627074811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_75
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 32
+        width: 41
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93e7be1de1ac32e0800000000000000
+      internalID: -2144661282740509793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_76
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 30
+        width: 41
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a673386bfb102fc40800000000000000
+      internalID: 5544496014158935914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_77
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 31
+        width: 43
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be26e1403deac820800000000000000
+      internalID: 2939422498332487346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_78
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 34
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010b3e788cc79f770800000000000000
+      internalID: 8645078160429527056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_79
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 34
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f14857c84d231d0800000000000000
+      internalID: -3372399471214977278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_80
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 32
+        width: 43
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59349c46f32f85ad0800000000000000
+      internalID: -2713152421402950763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_81
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 30
+        width: 42
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ff6886f8eaf7ce0800000000000000
+      internalID: -1405212627759071448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_34: -5941869639433557767
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_20: -8751504182426435734
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_71: -6973463895836102952
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_14: 3986984056328315021
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_47: -6414356013093188765
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_35: -7659629985010506348
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_19: 3460891821787340254
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_21: 8336575263559042148
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_27: 448582883904530255
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_43: 3395696911598789671
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_37: -2254679490296810081
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_73: -4820653677818535626
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_77: 2939422498332487346
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_7: -5522284136949437568
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_24: -5573827460974439834
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_22: 632973201277170370
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_0: 3094332199918216529
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_25: -1643457595433648475
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_59: 7865849144640066414
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_76: 5544496014158935914
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_28: -8962596094645476378
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_80: -2713152421402950763
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_49: 3530793751962971856
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_11: 7086774048579039915
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_42: -6225303782842760104
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_62: 5505531464072978822
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_61: 5179117452241865138
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_1: -9033960238663371640
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_10: 4660353034175113659
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_26: -6486263300746157942
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_55: -4653481762994065624
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_65: 6293079655063704619
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_57: 3444974732416477833
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_17: 2804261701766912660
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_75: -2144661282740509793
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_46: -1513144543951946998
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_3: 1698446513351607910
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_8: -4358496374244161344
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_31: 2776171593507989952
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_54: 7421914644070473557
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_52: 3448242032821867884
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_45: -4169783353201773121
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_60: 5859833770705928363
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_12: 7730463397594916568
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_64: 4556899080781865082
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_39: -6765451389984450007
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_6: -2923717281125131267
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_50: -1810059155477062784
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_44: 3644294450425029428
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_36: -6362200362616680668
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_5: -2692149539100918680
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_2: 6861992220298887046
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_70: 3332940464852846180
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_38: 1109111566680259113
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_51: -5013777365367572067
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_74: 5291244647627074811
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_58: -820133089146793223
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_63: 5452305674039996393
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_40: 2843177014159831859
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_66: 5047185527211133113
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_13: 5811309126764457776
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_41: -7931661324105754969
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_9: -490811511164163197
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_18: 2370820113736738219
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_81: -1405212627759071448
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_23: 851204515309046158
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_48: -3549374269881980645
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_33: -3851723671692269629
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_29: 4265502479505939589
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_78: 8645078160429527056
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_32: 8037945866408775591
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_53: -628776144717899667
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_68: 3860908202969099530
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_67: -2173647317585449687
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_79: -3372399471214977278
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_72: 7764471716720506858
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_15: -5516367719928918861
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_30: 3578845051478431476
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_4: 1445435779516725930
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_16: 7711230782329220326
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_56: -4868633598643493296
+      sprite-animation-2d-computer-graphics-line-image-2d-enemy-sprite-sheet-1526134-PhotoRoom_69: -1634497003766832841
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

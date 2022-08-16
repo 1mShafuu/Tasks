@@ -1,0 +1,322 @@
+fileFormatVersion: 2
+guid: 54b1667ac9daa8149886f4310bd91168
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8590215304435108358
+    second: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_0
+  - first:
+      213: 1857550029005844262
+    second: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_1
+  - first:
+      213: 6879986660041181267
+    second: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_2
+  - first:
+      213: -2095774120868993487
+    second: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_3
+  - first:
+      213: -3327352725590822859
+    second: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_4
+  - first:
+      213: 3792360915286163191
+    second: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_5
+  - first:
+      213: -1954292311543952030
+    second: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_6
+  - first:
+      213: -5633456494367625798
+    second: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_7
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 428
+        width: 511
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5750b81bc69c880800000000000000
+      internalID: -8590215304435108358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_1
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 428
+        width: 516
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62fe86fd8e757c910800000000000000
+      internalID: 1857550029005844262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_2
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 313
+        width: 511
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3584e236a6f9a7f50800000000000000
+      internalID: 6879986660041181267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_3
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 314
+        width: 511
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 136a52c7a805ae2e0800000000000000
+      internalID: -2095774120868993487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_4
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 199
+        width: 512
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5303bbc335ed2d1d0800000000000000
+      internalID: -3327352725590822859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_5
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 199
+        width: 511
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fef4bfd82c21a430800000000000000
+      internalID: 3792360915286163191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_6
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 85
+        width: 511
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d45273f75f0e4e0800000000000000
+      internalID: -1954292311543952030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_7
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 84
+        width: 510
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abda99b6a21f1d1b0800000000000000
+      internalID: -5633456494367625798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_0: -8590215304435108358
+      landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_2: 6879986660041181267
+      landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_6: -1954292311543952030
+      landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_4: -3327352725590822859
+      landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_5: 3792360915286163191
+      landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_7: -5633456494367625798
+      landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_1: 1857550029005844262
+      landscape-grounds-cartoon-dirt-clay-archeology-soil-layers-texture-buried-stones-grass-elements-vector-illustration-set-176155432-PhotoRoom_3: -2095774120868993487
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
