@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 356658360}
+  _player: {fileID: 557244522}
 --- !u!114 &356658360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 557244520}
     - target: {fileID: 5449311490432857037, guid: 838494ceecd9dcd41a424944620160f7, type: 3}
       propertyPath: m_Name
-      value: Hero
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5449311490432857037, guid: 838494ceecd9dcd41a424944620160f7, type: 3}
       propertyPath: m_TagString
@@ -535,6 +536,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5449311490432857035, guid: 838494ceecd9dcd41a424944620160f7, type: 3}
     - {fileID: 5449311490432857033, guid: 838494ceecd9dcd41a424944620160f7, type: 3}
+    - {fileID: 5449311490432857076, guid: 838494ceecd9dcd41a424944620160f7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 838494ceecd9dcd41a424944620160f7, type: 3}
 --- !u!1 &519420028
 GameObject:

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private EventInt CoinAdded;
+    [SerializeField] private UnityEvent<int> CoinAdded;
     
     private int _coinsAmount;
 
@@ -29,5 +29,3 @@ public class Player : MonoBehaviour
     }
 }
 
-[System.Serializable]
-public class EventInt : UnityEvent<int>{ }

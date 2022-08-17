@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float _speed;
@@ -18,17 +19,16 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-
         if (Input.GetKey(KeyCode.D))
         {
             _renderer.flipX = true;
             transform.Translate(_speed * Time.deltaTime, 0, 0);
-            _animator.SetFloat("Speed", _speed);
+            _animator.SetFloat(Animator.StringToHash("Speed"), _speed);
         }
         else if (Input.GetKey(KeyCode.A))
         {
             _renderer.flipX = false;
-            _animator.SetFloat("Speed", _speed);
+            _animator.SetFloat(Animator.StringToHash("Speed"), _speed);
             transform.Translate(_speed * Time.deltaTime * -1, 0, 0);
             
         }
@@ -40,7 +40,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            _animator.SetFloat("Speed", 0);
+            _animator.SetFloat(Animator.StringToHash("Speed"), 0);
         }
     }
 }
