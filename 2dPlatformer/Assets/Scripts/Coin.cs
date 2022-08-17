@@ -18,10 +18,11 @@ public class Coin : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        var coinAmount = 1;
+        
         if (collision.gameObject.TryGetComponent(out Player player))
         {
-            Debug.Log("COIN EARNED!!!");
-            player.AddCoin(1);
+            player.AddCoin(coinAmount);
             PlayerEntered?.Invoke();
             Destroy(gameObject);
         }

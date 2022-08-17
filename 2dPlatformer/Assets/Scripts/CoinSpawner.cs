@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 
 public class CoinSpawner : MonoBehaviour
 {
-    
     [SerializeField] private Coin coin;
     [SerializeField] private Transform points;
     [SerializeField] private int enemyCount;
@@ -38,7 +37,8 @@ public class CoinSpawner : MonoBehaviour
 
     private IEnumerator SpawnEnemies(int currentPoint)
     {
-        var waitForSeconds = new WaitForSeconds(2.0f);
+        float secondsForWait = 2.0f;
+        var waitForSeconds = new WaitForSeconds(secondsForWait);
         var radiusMultiplier = 4f;
 
         for (int index = 0; index < enemyCount; index++)

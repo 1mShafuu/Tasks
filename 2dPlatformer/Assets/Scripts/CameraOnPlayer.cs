@@ -13,29 +13,26 @@ public class CameraOnPlayer : MonoBehaviour
     
     private void Awake()
     {
-        this.transform.position = new Vector3()
+        transform.position = new Vector3()
         {
-            x = this._playerTransform.position.x,
-            y = this._playerTransform.position.y,
-            z = this._playerTransform.position.z - _numberToCenter
+            x = _playerTransform.position.x,
+            y = _playerTransform.position.y,
+            z = _playerTransform.position.z - _numberToCenter
         };
-        
     }
 
     private void Update()
     {
-        if (this._playerTransform)
+        if (_playerTransform)
         {
             Vector3 target = new Vector3()
             {
-                x = this._playerTransform.position.x,
-                y = this._playerTransform.position.y,
-                z = this._playerTransform.position.z - _numberToCenter
+                x = _playerTransform.position.x,
+                y = _playerTransform.position.y,
+                z = _playerTransform.position.z - _numberToCenter
             };
-
             Vector3 targetPosition = Vector3.Lerp(transform.position, target, _movingSpeed * Time.deltaTime);
-
-            this.transform.position = targetPosition;
+            transform.position = targetPosition;
         }
     }
 }
