@@ -13,16 +13,6 @@ public class CameraOnPlayer : MonoBehaviour
     
     private void Awake()
     {
-        if (this._playerTransform == null)
-        {
-            if (_playerTag == "")
-            {
-                _playerTag = "Player";
-            }
-            
-            this._playerTransform = GameObject.FindGameObjectWithTag(this._playerTag).transform;
-        }
-
         this.transform.position = new Vector3()
         {
             x = this._playerTransform.position.x,
