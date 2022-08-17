@@ -9,6 +9,8 @@ public class CameraOnPlayer : MonoBehaviour
     [SerializeField] private string _playerTag;
     [SerializeField] private float _movingSpeed;
 
+    private int _numberToCenter = 10;
+    
     private void Awake()
     {
         if (this._playerTransform == null)
@@ -25,7 +27,7 @@ public class CameraOnPlayer : MonoBehaviour
         {
             x = this._playerTransform.position.x,
             y = this._playerTransform.position.y,
-            z = this._playerTransform.position.z - 10
+            z = this._playerTransform.position.z - _numberToCenter
         };
         
     }
@@ -38,7 +40,7 @@ public class CameraOnPlayer : MonoBehaviour
             {
                 x = this._playerTransform.position.x,
                 y = this._playerTransform.position.y,
-                z = this._playerTransform.position.z - 10
+                z = this._playerTransform.position.z - _numberToCenter
             };
 
             Vector3 targetPosition = Vector3.Lerp(transform.position, target, _movingSpeed * Time.deltaTime);

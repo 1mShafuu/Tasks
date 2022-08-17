@@ -7,26 +7,20 @@ using UnityEngine.UI;
 public class CoinsUI : MonoBehaviour
 {
     [SerializeField] private Text _text;
-
-    private Player _player;
-    
-    public void SetCoins(int value)
-    {
-        _text.text = value.ToString();
-    }
+    [SerializeField] private Player _player;
 
     private void OnEnable()
     {
-        if (_player == null)
-        {
-            _player = FindObjectOfType<Player>();
-        }
-        
         _player.AddListener(SetCoins);
     }
 
     private void OnDisable()
     {
         _player.RemoveListener(SetCoins);
+    }
+    
+    public void SetCoins(int value)
+    {
+        _text.text = value.ToString();
     }
 }
