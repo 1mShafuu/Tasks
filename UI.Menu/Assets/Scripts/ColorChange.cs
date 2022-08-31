@@ -21,19 +21,14 @@ public class ColorChange : MonoBehaviour
         }
     }
 
-    public void SetColorForPlayButton()
+    public void SetColorForDamageButton()
     {
         _image.color = Color.blue;
     }
 
-    public void ChangeColorForAuthorsButton()
+    public void ChangeColorForHealButton()
     {
-        _image.DOColor(_to, 2f).SetLoops(-1, LoopType.Yoyo);
+        var duration = 2f;
+        _image.DOColor(_to, duration).SetLoops(-1, LoopType.Yoyo);
     }
-
-    public void RotateForExitButton()
-    {
-        _image.DOFade(0f, 2f);
-    }
-
 }
