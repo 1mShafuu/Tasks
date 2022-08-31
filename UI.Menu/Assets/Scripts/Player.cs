@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
    private const float _changeValue = 10;
+   private const float maxHealth = 100f;
+   private const float minHealth = 0f;
    
    private float _health;
 
@@ -17,11 +19,17 @@ public class Player : MonoBehaviour
 
    public void TakeDamage()
    {
-      _health -= _changeValue;
+      if (_health > minHealth)
+      {
+         _health -= _changeValue;
+      }
    }
 
    public void TakeHeal()
    {
-      _health += _changeValue;
+      if (_health < maxHealth)
+      {
+         _health += _changeValue;
+      }
    }
 }

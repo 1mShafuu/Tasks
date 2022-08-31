@@ -10,8 +10,6 @@ public class HealthUI : MonoBehaviour
     [SerializeField] private Slider _slider;
     [SerializeField] private Player _player;
     
-    private const int maxHealthToHeal = 90;
-    private const int minHealthToDamage = 10;
     private const float _changeSpeed = 5f;
 
     private float _changedSliderValue;
@@ -29,19 +27,11 @@ public class HealthUI : MonoBehaviour
 
     public void Heal()
     {
-        if (_player.Health <= maxHealthToHeal)
-        {
-            _player.TakeHeal();
-            _changedSliderValue = _player.Health;
-        }
+        _changedSliderValue = _player.Health;
     }
 
     public void Damage()
-    {
-        if (_player.Health >= minHealthToDamage)
-        {
-             _player.TakeDamage();
-             _changedSliderValue = _player.Health;
-        }
+    { 
+        _changedSliderValue = _player.Health;
     }
 }
