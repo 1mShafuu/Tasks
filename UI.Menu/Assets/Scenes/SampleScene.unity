@@ -201,7 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 242605784}
   - component: {fileID: 242605786}
-  - component: {fileID: 242605785}
+  - component: {fileID: 242605788}
   - component: {fileID: 242605787}
   m_Layer: 5
   m_Name: HealthBar
@@ -229,23 +229,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10.001999, y: 131.44}
+  m_AnchoredPosition: {x: -10.002014, y: 131.44}
   m_SizeDelta: {x: -175.18, y: -551.72}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &242605785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242605783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc423f1fdae09394ea263a4006e051d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 242605786}
-  _player: {fileID: 353645625}
 --- !u!114 &242605786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +295,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea4087e668677644baa3696a4d5aa93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &242605788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242605783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc423f1fdae09394ea263a4006e051d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 242605786}
+  _player: {fileID: 353645625}
 --- !u!1 &339804253
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 353645623}
   - component: {fileID: 353645625}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 506046437}
   - component: {fileID: 506046440}
   m_Layer: 5
-  m_Name: PlayButton
+  m_Name: DamageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -567,9 +567,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 242605785}
-        m_TargetAssemblyTypeName: HP, Assembly-CSharp
+      - m_Target: {fileID: 353645625}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 242605788}
+        m_TargetAssemblyTypeName: HealthUI, Assembly-CSharp
         m_MethodName: Damage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 506046440}
+        m_TargetAssemblyTypeName: ColorChanger, Assembly-CSharp
+        m_MethodName: SetBlueColor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1256,7 +1280,7 @@ GameObject:
   - component: {fileID: 1905677787}
   - component: {fileID: 1905677786}
   m_Layer: 5
-  m_Name: AuthorsButton
+  m_Name: HealButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1342,9 +1366,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 242605785}
-        m_TargetAssemblyTypeName: HP, Assembly-CSharp
+      - m_Target: {fileID: 353645625}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: TakeHeal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 242605788}
+        m_TargetAssemblyTypeName: HealthUI, Assembly-CSharp
         m_MethodName: Heal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1905677786}
+        m_TargetAssemblyTypeName: ColorChanger, Assembly-CSharp
+        m_MethodName: SetGradientColor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
