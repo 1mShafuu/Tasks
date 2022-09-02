@@ -30,7 +30,7 @@ public class HealthUI : MonoBehaviour
             StopCoroutine(_healthChanger);
         }
 
-        StartCoroutine(HealthChanger());
+        _healthChanger = StartCoroutine(HealthChanger());
     }
     
     private IEnumerator HealthChanger()

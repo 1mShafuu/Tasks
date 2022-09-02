@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-   private const float ChangeValue = 10;
    private const float MaxHealth = 100f;
    private const float MinHealth = 0f;
    
@@ -17,24 +16,24 @@ public class Player : MonoBehaviour
 
    public Player()
    {
-      _health = 100f;
+      _health = 88f;
    }
 
-   public void TakeDamage()
+   public void TakeDamage(float value)
    {
-      if (_health > MinHealth)
-      {
-         _health -= ChangeValue;
-         PlayerHealthChanged.Invoke();
-      }
+      _health -= value;
+      NormalizeHealthValue();
    }
 
-   public void TakeHeal()
+   public void TakeHeal(float value)
    {
-      if (_health < MaxHealth)
-      {
-         _health += ChangeValue;
-         PlayerHealthChanged.Invoke();
-      }
+      _health += value;
+      NormalizeHealthValue();
+   }
+
+   private void NormalizeHealthValue()
+   {
+      _health = Mathf.Clamp(_health, MinHealth, MaxHealth);
+      PlayerHealthChanged?.Invoke();
    }
 }

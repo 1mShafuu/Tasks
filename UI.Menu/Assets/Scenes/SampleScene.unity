@@ -295,6 +295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea4087e668677644baa3696a4d5aa93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &242605788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,6 +485,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea4087e668677644baa3696a4d5aa93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerHealthChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 242605788}
+        m_TargetAssemblyTypeName: HealthUI, Assembly-CSharp
+        m_MethodName: HealthChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &506046435
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,18 +588,6 @@ MonoBehaviour:
       - m_Target: {fileID: 353645625}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: TakeDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 242605788}
-        m_TargetAssemblyTypeName: HealthUI, Assembly-CSharp
-        m_MethodName: Damage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1369,18 +1375,6 @@ MonoBehaviour:
       - m_Target: {fileID: 353645625}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: TakeHeal
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 242605788}
-        m_TargetAssemblyTypeName: HealthUI, Assembly-CSharp
-        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
