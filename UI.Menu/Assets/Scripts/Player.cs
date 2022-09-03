@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
    private const float MaxHealth = 100f;
    private const float MinHealth = 0f;
    
-   [SerializeField] private UnityEvent PlayerHealthChanged;
+   public UnityAction PlayerHealthChanged;
    
    private float _health;
 
@@ -25,12 +25,12 @@ public class Player : MonoBehaviour
       NormalizeHealthValue();
    }
 
-   public void TakeHeal(float value)
+   public void TakeHealth(float value)
    {
       _health += value;
       NormalizeHealthValue();
    }
-
+   
    private void NormalizeHealthValue()
    {
       _health = Mathf.Clamp(_health, MinHealth, MaxHealth);

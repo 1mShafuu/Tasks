@@ -16,10 +16,11 @@ public class HealthUI : MonoBehaviour
 
     private float _changedSliderValue;
     private Coroutine _healthChanger;
-
+    
     private void Awake()
     {
-         _changedSliderValue = _player.Health;
+        _player.PlayerHealthChanged += HealthChange;
+        _changedSliderValue = _player.Health;
          _slider.value = _player.Health;
     }
 
