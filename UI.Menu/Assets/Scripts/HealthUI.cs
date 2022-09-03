@@ -19,7 +19,7 @@ public class HealthUI : MonoBehaviour
     
     private void Awake()
     {
-        _player.PlayerHealthChanged += HealthChange;
+        _player.HealthChanged += HealthChange;
         _changedSliderValue = _player.Health;
          _slider.value = _player.Health;
     }
