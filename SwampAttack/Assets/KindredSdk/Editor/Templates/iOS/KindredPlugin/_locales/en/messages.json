@@ -1,0 +1,12 @@
+
+               {
+                  "appName": {
+                    "message": "APP_NAME",
+                    "description": "The name of the application"
+                  },
+                  "appDescription": {
+                    "message": "APP_NAME Cash back and Coupons",
+                    "description": "The description of the application"
+                  }
+                }
+            

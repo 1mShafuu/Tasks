@@ -1,0 +1,4 @@
+<resources>
+    <string name="accessibility_service_description">APP_NAME Deals Service</string>
+    <string name="accessibility_service_label">APP_NAME</string>
+</resources>

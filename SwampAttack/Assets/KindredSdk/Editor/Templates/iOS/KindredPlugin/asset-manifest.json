@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/static/js/main.js",
+    "background.js": "/static/js/background.js",
+    "contentscript.js": "/static/js/contentscript.js",
+    "browsercompat.js": "/static/js/browsercompat.js",
+    "index.html": "/index.html",
+    "main.js.map": "/static/js/main.js.map",
+    "background.js.map": "/static/js/background.js.map",
+    "contentscript.js.map": "/static/js/contentscript.js.map",
+    "browsercompat.js.map": "/static/js/browsercompat.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.js"
+  ]
+}
