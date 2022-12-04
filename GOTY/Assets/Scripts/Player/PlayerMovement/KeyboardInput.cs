@@ -15,14 +15,22 @@ public class KeyboardInput : MonoBehaviour
 
     private void Update()
     {
+        var pressedKeyDown = Input.GetKeyDown(KeyCode.S);
+        var pressedKeyRight = Input.GetKeyDown(KeyCode.D);
+        var pressedKeyLeft = Input.GetKeyDown(KeyCode.A);
+        //Debug.Log($"PRESSED DOWN {pressedKeyDown}");
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _movement.Jump();
+            _movement.JumpUp();
+        }
+
+        if (pressedKeyDown)
+        {
+            _movement.JumpDown();
         }
         
-        var keyDownRight = Input.GetKeyDown(KeyCode.D);
-        var keyDownLeft = Input.GetKeyDown(KeyCode.A);
         // _movement.Move(new Vector3(1, 0, -horizontal));
-        _movement.Move(keyDownLeft, keyDownRight);
+        _movement.Move(pressedKeyLeft, pressedKeyRight);
     }
 }

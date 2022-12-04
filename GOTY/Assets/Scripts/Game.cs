@@ -12,6 +12,7 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
+        _endScreen.Close();
         Time.timeScale = 0;
         _startScreen.Open();
     }

@@ -9,9 +9,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private SurfaceSlider _surfaceSlider;
     [SerializeField] private float _speed;
-    [SerializeField] private float _jumpForce;
+    [SerializeField] private float _jumpForceUp;
     [SerializeField] private LayerMask _whatIsGround;
     [SerializeField] private float _jumpCooldown;
+    
+    private const float JumpForceDown = -10;
+    private const float LineDistance = 4f;
 
     private bool _isGrounded;
     private bool _isReadyToJump;
@@ -20,9 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private MovementBorders _borders;
     private float _leftBorder;
     private float _rightBorder;
-    
     private int _moveLine = 1;
-    private float _lineDistance = 4; 
 
     public float Speed => _speed;
 
@@ -79,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
             if (_moveLine < 2)
             {
                 _moveLine++;
-                _rigidbody.position += Vector3.back * _lineDistance;
+                _rigidbody.position += Vector3.back * LineDistance;
             }
         }
 
@@ -88,21 +89,30 @@ public class PlayerMovement : MonoBehaviour
             if (_moveLine > 0)
             { 
                 _moveLine--; 
-                _rigidbody.position += Vector3.forward * _lineDistance;
+                _rigidbody.position += Vector3.forward * LineDistance;
             }
         }
         
         _rigidbody.MovePosition(_rigidbody.position + Vector3.right * (_speed * Time.deltaTime));
     }
 
-    public void Jump()
+    public void JumpUp()
     {
         if(_isReadyToJump && _isGrounded)
         {
             _isReadyToJump = false;
             _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0f, _rigidbody.velocity.z);
-            _rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
+            _rigidbody.AddForce(transform.up * _jumpForceUp, ForceMode.Impulse);
             Invoke(nameof(ResetJump), _jumpCooldown);
+        }
+    }
+
+    public void JumpDown()
+    {
+        if (_isGrounded == false)
+        {
+            _rigidbody.AddForce(transform.up * JumpForceDown, ForceMode.VelocityChange);
+            _jumpCooldown = 0;
         }
     }
     
