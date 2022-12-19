@@ -3,15 +3,16 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody), typeof(SurfaceSlider), typeof(SpeedMagnifier))]
 public class PlayerMovement : MonoBehaviour
 {
+    private const float JumpForceDown = -15f;
+    private const float LineDistance = 4f;
+    private const float MaxDistanceToGroundCheck = 2 * 0.5f + 0.3f;
+    
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private SurfaceSlider _surfaceSlider;
     [SerializeField] private float _movementSpeed;
     [SerializeField] private float _jumpForceUp;
     [SerializeField] private LayerMask _whatIsGround;
-
-    private const float JumpForceDown = -15f;
-    private const float LineDistance = 4f;
-
+    
     private bool _isGrounded;
     private bool _isReadyToJump;
     private RaycastHit _hit;
@@ -43,14 +44,13 @@ public class PlayerMovement : MonoBehaviour
     
     private void Start()
     {
-        
         transform.position += Vector3.up;
     }
 
     private void Update()
     {
         //Debug.Log($"{_leftBorder} {_rightBorder}");
-        _isGrounded = Physics.Raycast(transform.position, Vector3.down, 2 * 0.5f + 0.3f, _whatIsGround);
+        _isGrounded = Physics.Raycast(transform.position, Vector3.down, MaxDistanceToGroundCheck, _whatIsGround);
     }
     
     public void Move(bool keyDownLeft, bool keyDownRight)

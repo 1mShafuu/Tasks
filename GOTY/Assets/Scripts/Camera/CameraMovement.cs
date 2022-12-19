@@ -3,9 +3,10 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private Transform _targetPlayer;
-
+    [SerializeField] private Vector3 _cameraOffset;
+    
     private void Update()
     {
-        transform.position = _targetPlayer.position + new Vector3(-4.5f,2.1f,0);
+        transform.position = _targetPlayer.position + _cameraOffset;
     }
 }

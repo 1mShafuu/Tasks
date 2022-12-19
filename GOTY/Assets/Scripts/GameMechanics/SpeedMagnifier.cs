@@ -3,9 +3,9 @@ using UnityEngine.Events;
 
 public class SpeedMagnifier : MonoBehaviour
 {
-    [SerializeField] private PlayerMovement _movement;
-    
     private const float SpeedIncreaseMeasure = 0.5f;
+    
+    [SerializeField] private PlayerMovement _movement;
     
     private float _speed;
     

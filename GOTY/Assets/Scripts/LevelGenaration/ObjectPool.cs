@@ -47,7 +47,8 @@ public class ObjectPool : MonoBehaviour
 
     protected void DisableObjectAbroadScreen()
     {
-        Vector3 disablePoint = _camera.ViewportToWorldPoint(new Vector3(0, 2f, 0));
+        var offPosition = new Vector3(0, 2f, 0);
+        Vector3 disablePoint = _camera.ViewportToWorldPoint(offPosition);
         
         foreach (var obstacle in _obstaclePool)
         {

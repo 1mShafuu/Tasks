@@ -6,11 +6,11 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+    private const int CheckPoint = 75;
+    
     [SerializeField] private int _health;
     [SerializeField] private Vector3 _startPosition;
-
-    private const int CheckPoint = 75;
-
+    
     private int _startHealth;
     private SpeedMagnifier _magnifier;
     private PlayerMovement _movement;
