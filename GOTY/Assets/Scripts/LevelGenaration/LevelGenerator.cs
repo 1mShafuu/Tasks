@@ -53,7 +53,6 @@ public class LevelGenerator : ObjectPool
 
     private void Update()
     {
-        //Debug.Log(_generatorSpawnPosition);
         _elapsedTime += Time.deltaTime;
 
         if (_elapsedTime > _secondsBetweenSpawn)
@@ -64,12 +63,9 @@ public class LevelGenerator : ObjectPool
                 int spawnPosition = _possibleLines[Random.Range(0,_possibleLines.Length)];
                 Vector3 spawnPoint = transform.position;
                 spawnPoint.z = spawnPosition;
-                //Debug.Log(_generatorSpawnPosition.y);
                 spawnPoint.y = _generatorSpawnPosition.y;
-               // Debug.Log(spawnPoint);
                 obstacle.SetActive(true);
                 obstacle.transform.position = spawnPoint;
-                //Debug.Log(transform.TransformPoint(obstacle.transform.position));
                 DisableObjectAbroadScreen();
             }
         }
