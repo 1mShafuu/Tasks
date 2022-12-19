@@ -66,7 +66,7 @@ public class LevelGenerator : ObjectPool
                 spawnPoint.z = spawnPosition;
                 //Debug.Log(_generatorSpawnPosition.y);
                 spawnPoint.y = _generatorSpawnPosition.y;
-                Debug.Log(spawnPoint);
+               // Debug.Log(spawnPoint);
                 obstacle.SetActive(true);
                 obstacle.transform.position = spawnPoint;
                 //Debug.Log(transform.TransformPoint(obstacle.transform.position));
