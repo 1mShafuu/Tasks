@@ -56,22 +56,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _speedBooster.SpeedChanged -= OnSpeedChanged;
     }
-
-    public void Move(Vector3 direction)
-    {
-        Vector3 directionAlongSurface = _surfaceSlider.Project(direction.normalized);
-        Vector3 offset = directionAlongSurface * (_speed * Time.deltaTime);
-        var newVectorPosition = _rigidbody.position + offset;
-        
-        if (newVectorPosition.z < _rightBorder && newVectorPosition.z > _leftBorder)
-        {
-            _rigidbody.MovePosition(newVectorPosition);
-        }
-        else
-        {
-            _rigidbody.MovePosition(transform.position + Vector3.right * (_speed * Time.deltaTime));
-        }
-    }
     
     public void Move(bool keyDownLeft, bool keyDownRight)
     {
@@ -124,6 +108,5 @@ public class PlayerMovement : MonoBehaviour
     private void OnSpeedChanged(float speed)
     {
         _speed = speed;
-        
     }
 }
