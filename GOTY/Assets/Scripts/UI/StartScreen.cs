@@ -5,9 +5,9 @@ using UnityEngine.Events;
 
 public class StartScreen : Screen
 {
-    public event UnityAction PlayButtonClicked; 
+    public event UnityAction PlayButtonClicked;
 
-    protected override void OnButtonClicked()
+    protected override void OnRestartButtonClicked()
     {
         PlayButtonClicked?.Invoke();
     }
@@ -15,12 +15,12 @@ public class StartScreen : Screen
     public override void Open()
     {
         CanvasGroup.alpha = 1;
-        Button.interactable = true;
+        RestartButton.interactable = true;
     }
 
     public override void Close()
     {
         CanvasGroup.alpha = 0;
-        Button.interactable = false;
+        RestartButton.interactable = false;
     }
 }

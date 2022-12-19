@@ -9,10 +9,11 @@ public class Player : MonoBehaviour
     [SerializeField] private int _health;
     [SerializeField] private Vector3 _startPosition;
 
-    private const int CheckPoint = 50;
-    private const int StartHP = 1;
+    private const int CheckPoint = 75;
 
-    private SpeedBooster _booster;
+    private int _startHealth;
+    private SpeedMagnifier _magnifier;
+    private PlayerMovement _movement;
     private int _score;
     private int _checkpointDistance;
     private float _startPositionCoordinateX;
@@ -26,7 +27,9 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _startPosition = transform.position;
-        _booster = GetComponent<SpeedBooster>();
+        _magnifier = GetComponent<SpeedMagnifier>();
+        _movement = GetComponent<PlayerMovement>();
+        _startHealth = _health;
     }
 
     private void Start()
@@ -49,17 +52,18 @@ public class Player : MonoBehaviour
     
     public void Die()
     {
-        Debug.Log("DEEEEAAAAD");
         Time.timeScale = 0;
         GameOver?.Invoke();
     }
 
-    public void Reset()
+    public void ResetPlayer()
     {
         _score = 0;
-        _health = StartHP;
+        _health = _startHealth;
         transform.position = _startPosition;
         transform.rotation = Quaternion.Euler(Vector3.zero);
+        _movement.ResetMovement();
+        _checkpointDistance = CheckPoint;
     }
 
     private void MeasureTravelledDistance()
@@ -69,7 +73,7 @@ public class Player : MonoBehaviour
 
         if ((int)currentDistance == _checkpointDistance)
         {
-            _booster.SpeedChange();
+            _magnifier.SpeedChange();
             _checkpointDistance += CheckPoint;
         }
     }

@@ -1,0 +1,47 @@
+﻿public void Move(Vector3 direction)
+    {
+        Vector3 directionAlongSurface = _surfaceSlider.Project(direction.normalized);
+        Vector3 offset = directionAlongSurface * (_movementSpeed * Time.deltaTime);
+        var newVectorPosition = _rigidbody.position + offset;
+        
+        if (newVectorPosition.z < _rightBorder && newVectorPosition.z > _leftBorder)
+        {
+            _rigidbody.MovePosition(newVectorPosition);
+        }
+        else
+        {
+            _rigidbody.MovePosition(transform.position + Vector3.right * (_movementSpeed * Time.deltaTime));
+        }
+    }
+    
+    
+    
+     public void Move(bool keyDownLeft, bool keyDownRight)
+        {
+            const int leftMostLane = 0;
+            const int rightMostLane = 2;
+            var distanceToEdge = _rigidbody.position.z;
+            Vector3 directionAlongSurface = _surfaceSlider.Project(Vector3.right.normalized);
+            Vector3 offset = directionAlongSurface * (_movementSpeed * Time.deltaTime);
+    
+            if (keyDownRight && distanceToEdge > _leftBorder)
+            {
+                if (_moveLine < rightMostLane)
+                {
+                    _moveLine++;
+                    _rigidbody.position += Vector3.back * LineDistance;
+                }
+            }
+    
+            if (keyDownLeft && distanceToEdge < _rightBorder)
+            {
+                if (_moveLine > leftMostLane)
+                { 
+                    _moveLine--; 
+                    _rigidbody.position += Vector3.forward * LineDistance;
+                }
+            }
+            
+            var newVectorPosition = _rigidbody.position + offset;
+            _rigidbody.MovePosition(newVectorPosition);
+        }

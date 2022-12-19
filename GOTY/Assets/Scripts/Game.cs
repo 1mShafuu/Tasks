@@ -31,6 +31,12 @@ public class Game : MonoBehaviour
         _player.GameOver -= OnGameOver;
     }
 
+    private void OnGameOver()
+    {
+        Time.timeScale = 0;
+        _endScreen.Open();
+    }
+    
     private void OnPlayButtonClicked()
     {
         _startScreen.Close();
@@ -41,19 +47,13 @@ public class Game : MonoBehaviour
     {
         _endScreen.Close();
         _levelGenerator.ResetPool();
-        _levelGenerator.Restart();
+        _levelGenerator.RestartObjects();
         StartGame();
     }
-
+    
     private void StartGame()
     {
         Time.timeScale = 1;
-        _player.Reset();
-    }
-
-    public void OnGameOver()
-    {
-        Time.timeScale = 0;
-        _endScreen.Open();
+        _player.ResetPlayer();
     }
 }

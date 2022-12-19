@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -21,29 +19,35 @@ public class ObjectPool : MonoBehaviour
         }   
     }
 
-    protected void Initialize(List<GameObject> obstaclePrefabs, GameObject levelPrefab)
+    protected void Initialize(List<GameObject> obstaclePrefabs)
     {
+        for (int index = 0; index < _obstaclePool.Count; index++)
+        {
+            Destroy(_obstaclePool[index]);
+        }
+        
+        _obstaclePool.Clear();
         _camera = Camera.main;
         
         for (int index = 0; index < _obstacleCapacity; index++)
         {
             var randomPrefabNumber = Random.Range(0, obstaclePrefabs.Count);
             var obstaclePrefab = obstaclePrefabs[randomPrefabNumber];
-            GameObject spawmed = Instantiate(obstaclePrefab, _obstacleContainer.transform);
-            spawmed.SetActive(false);
-            _obstaclePool.Add(spawmed);
+            GameObject spawned = Instantiate(obstaclePrefab, _obstacleContainer.transform);
+            spawned.SetActive(false);
+            _obstaclePool.Add(spawned);
         }
     }
 
     protected bool TryGetObject(out GameObject result)
     {
-        result = _obstaclePool.FirstOrDefault(p => p.activeSelf == false);
+        result = _obstaclePool.FirstOrDefault(obstacle => obstacle.activeSelf == false);
         return result != null;
     }
 
     protected void DisableObjectAbroadScreen()
     {
-        Vector3 disablePoint = _camera.ViewportToWorldPoint(new Vector2(0, 2f));
+        Vector3 disablePoint = _camera.ViewportToWorldPoint(new Vector3(0, 2f, 0));
         
         foreach (var obstacle in _obstaclePool)
         {
