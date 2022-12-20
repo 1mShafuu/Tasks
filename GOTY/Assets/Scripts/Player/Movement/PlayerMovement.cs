@@ -17,16 +17,12 @@ public class PlayerMovement : MonoBehaviour
     private bool _isReadyToJump;
     private RaycastHit _hit;
     private SpeedMagnifier _speedMagnifier;
-   // private MovementBorders _borders;
-   // private float _leftBorder;
-   // private float _rightBorder;
     private int _moveLine = 1;
     
     public float MovementSpeed => _movementSpeed;
 
     private void Awake()
     {
-   //     _borders = GetComponent<MovementBorders>();
         _isReadyToJump = true;
         _rigidbody = GetComponent<Rigidbody>();
         _speedMagnifier = GetComponent<SpeedMagnifier>();
@@ -49,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log($"{_leftBorder} {_rightBorder}");
         _isGrounded = Physics.Raycast(transform.position, Vector3.down, MaxDistanceToGroundCheck, _whatIsGround);
     }
     
@@ -57,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
     {
         const int leftMostLane = 0;
         const int rightMostLane = 2;
-        //var distanceToEdge = _rigidbody.position.z;
         Vector3 directionAlongSurface = _surfaceSlider.Project(Vector3.right.normalized);
         Vector3 offset = directionAlongSurface * (_movementSpeed * Time.deltaTime);
 
@@ -115,7 +109,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnSpeedChanged(float speed)
     {
-       // Debug.Log($"REACt");
         _movementSpeed = speed;
     }
 }
