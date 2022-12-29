@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CatchArea : MonoBehaviour
 {
-    private const int MaxColliders = 5;
+    private const int MaxColliders = 7;
     
     [SerializeField] private GameObject _catchAreaMesh;
     [SerializeField] private float _radius;
@@ -23,16 +23,8 @@ public class CatchArea : MonoBehaviour
         Physics.OverlapSphereNonAlloc(transform.position, _radius, hits);
 
         Collider catchTarget = null;
-        
-        foreach (var hit in hits)
-        {
-            if (hit != null && hit.gameObject.TryGetComponent(out Sheep sheep))
-            {
-                catchTarget = hit;
-                break;
-            }
-        }
-        
+        hits = hits.Where(hit => hit != null && hit.TryGetComponent(out Animal animal)).ToArray();
+        catchTarget = TryGetClosest(hits);
         Catch(catchTarget);
     }
 
@@ -48,7 +40,8 @@ public class CatchArea : MonoBehaviour
             
             if (_elapsedTime >= timeToCatch)
             {
-                Destroy(target.gameObject);
+               // Destroy(target.gameObject);
+                target.gameObject.SetActive(false);
                 _elapsedTime = 0;
             }
         }
@@ -56,5 +49,23 @@ public class CatchArea : MonoBehaviour
         {
             _catchAreaMesh.SetActive(false);
         }
+    }
+
+    private Collider TryGetClosest(Collider[] hits)
+    {
+        float minDistanceToSheep = Single.MaxValue;
+        Collider closestCollider = null;
+        
+        foreach (var hit in hits)
+        {
+            float currentDistance = Vector3.Distance(transform.position, hit.gameObject.transform.position);
+            if (currentDistance < minDistanceToSheep)
+            {
+                minDistanceToSheep = currentDistance;
+                closestCollider = hit;
+            }
+        }
+
+        return closestCollider;
     }
 }
