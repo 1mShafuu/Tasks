@@ -11,6 +11,8 @@ public class CatchArea : MonoBehaviour
     [SerializeField] private float _radius;
 
     private float _elapsedTime;
+
+    public event Action AnimalCatched;
     
     private void Awake()
     {
@@ -40,8 +42,8 @@ public class CatchArea : MonoBehaviour
             
             if (_elapsedTime >= timeToCatch)
             {
-               // Destroy(target.gameObject);
                 target.gameObject.SetActive(false);
+                AnimalCatched?.Invoke();
                 _elapsedTime = 0;
             }
         }
