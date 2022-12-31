@@ -39,7 +39,7 @@ public class CatchArea : MonoBehaviour
             _elapsedTime += Time.deltaTime;
             _catchAreaMesh.SetActive(true);
             transform.LookAt(target.transform);
-            
+             
             if (_elapsedTime >= timeToCatch)
             {
                 target.gameObject.SetActive(false);
@@ -55,7 +55,7 @@ public class CatchArea : MonoBehaviour
 
     private Collider TryGetClosest(Collider[] hits)
     {
-        float minDistanceToSheep = Single.MaxValue;
+        var minDistanceToSheep = float.MaxValue;
         Collider closestCollider = null;
         
         foreach (var hit in hits)
