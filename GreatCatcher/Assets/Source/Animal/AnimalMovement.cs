@@ -6,9 +6,12 @@ using Random = UnityEngine.Random;
 
 public class AnimalMovement : MonoBehaviour
 {
+    private const float ChangeTargetMovementTime = 10f;
+    
     private Vector3 _targetMovement;
     private float _speed = 1.5f;
     private float minDistance = 1f;
+    private float _elapsedTime = 0;
     
     private void Awake()
     {
@@ -17,14 +20,17 @@ public class AnimalMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        _elapsedTime += Time.deltaTime;
+        
+        if (_elapsedTime >= ChangeTargetMovementTime)
+        {
+            GetNewTargetPosition();
+            _elapsedTime = 0;
+        }
+        
         if (Vector3.Distance(transform.position, _targetMovement) >= minDistance)
         {
             transform.position = Vector3.MoveTowards(transform.position, _targetMovement, _speed * Time.deltaTime);
-            
-        }
-        else
-        {
-            GetNewTargetPosition();
         }
     }
 

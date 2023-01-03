@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class AnimalSpawner : ObjectPool
 {
-    private const int SpawnRadius = 50;
+    private const int SpawnRadius = 40;
     private const int AmountAllowedActiveAnimals = 2;
     
     [SerializeField] private List<GameObject> _animalTemplates;
@@ -70,8 +70,11 @@ public class AnimalSpawner : ObjectPool
         }
     }
 
-    private void OnAnimalCatched()
+    private void OnAnimalCatched(GameObject animal)
     {
-        _currentAnimalsAmount--;
+        if (_currentAnimalsAmount > -1)
+        {
+            _currentAnimalsAmount--;
+        }
     }
 }

@@ -5,31 +5,43 @@ using UnityEngine;
 
 public class Bag : MonoBehaviour
 {
-    private const int MaxPortableObjects = 3;
-
-    [SerializeField] private Player _player;
-    
+    private AnimalsUnloader _unloader;
     private CatchArea _catchArea;
-    private int _bagAnimalsCount = 0;
+    private List<GameObject> _catchedAnimals;
+    
+    public int AnimalsInBag => _catchedAnimals.Count;
+    public IReadOnlyList<GameObject> CatchedAnimals => _catchedAnimals;
 
     private void Awake()
     {
-        _catchArea = _player.GetComponent<CatchArea>();
+        _catchedAnimals = new List<GameObject>();
+        _catchArea = GetComponent<CatchArea>();
+        _unloader = GetComponent<AnimalsUnloader>();
     }
 
     private void OnEnable()
     {
         _catchArea.AnimalCatched += OnAnimalCatched;
+        _unloader.AnimalUnloaded += OnAnimalUnloaded;
     }
 
     private void OnDisable()
     {
         _catchArea.AnimalCatched -= OnAnimalCatched;
+        _unloader.AnimalUnloaded -= OnAnimalUnloaded;
     }
     
 
-    private void OnAnimalCatched()
+    private void OnAnimalCatched(GameObject animal)
     {
-        _bagAnimalsCount++;
+        _catchedAnimals.Add(animal);
+    }
+
+    private void OnAnimalUnloaded()
+    {
+        const int firstElementIndex = 0;
+        const int indexOfDeletedElement = 1;
+        _catchedAnimals.RemoveAt(firstElementIndex);
+        Destroy(transform.GetChild(indexOfDeletedElement).gameObject);
     }
 }
