@@ -49,7 +49,7 @@ public class AnimalSpawner : ObjectPool
     private void Update()
     {
         _elapsedTime += Time.deltaTime;
-
+        
         if (_elapsedTime >= _spawnCooldown && CanAddMoreAnimals)
         {
             _elapsedTime = 0;

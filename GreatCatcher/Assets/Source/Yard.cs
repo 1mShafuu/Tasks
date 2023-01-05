@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class Yard : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   [SerializeField] private int _level;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   public int Level => _level;
 }

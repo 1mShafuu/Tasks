@@ -40,8 +40,6 @@ public class Bag : MonoBehaviour
     private void OnAnimalUnloaded()
     {
         const int firstElementIndex = 0;
-        const int indexOfDeletedElement = 1;
         _catchedAnimals.RemoveAt(firstElementIndex);
-        Destroy(transform.GetChild(indexOfDeletedElement).gameObject);
     }
 }

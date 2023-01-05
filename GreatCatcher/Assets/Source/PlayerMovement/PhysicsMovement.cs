@@ -11,15 +11,32 @@ public class PhysicsMovement : MonoBehaviour
     
     private Rigidbody _rigidbody;
     private SurfaceSlider _surfaceSlider;
+    private Animator _animator;
 
     private void Awake()
     {
+        _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
         _surfaceSlider = GetComponent<SurfaceSlider>();
     }
 
     public void Move(Vector3 direction)
     {
+        if (direction != Vector3.zero)
+        {
+            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+                _animator.Play("Run");
+            }
+            
+            Quaternion toRotation = Quaternion.LookRotation(direction,Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation,14f);
+        }
+        else
+        {
+            _animator.Play("Idle");
+        }
+        
         Vector3 directionAlongSurface = _surfaceSlider.Project(direction.normalized);
        // Debug.Log(directionAlongSurface);
         Vector3 offset = directionAlongSurface * (_speed * Time.deltaTime);
