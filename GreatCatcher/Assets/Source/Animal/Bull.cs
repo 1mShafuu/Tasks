@@ -1,0 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Bull : Animal
+{
+    private void Awake()
+    {
+        _level = 3;
+    }
+}

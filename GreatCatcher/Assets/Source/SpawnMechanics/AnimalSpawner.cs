@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class AnimalSpawner : ObjectPool
 {
-    private const int SpawnRadius = 40;
-    private const int AmountAllowedActiveAnimals = 2;
+    private const int SpawnRadius = 70;
+    private const int AmountAllowedActiveAnimals = 10;
     
     [SerializeField] private List<GameObject> _animalTemplates;
     [SerializeField] private float _spawnCooldown;
@@ -23,9 +24,16 @@ public class AnimalSpawner : ObjectPool
     
     private void Awake()
     {
-        _catchArea = _player.GetComponent<CatchArea>();
-        Initialize(_animalTemplates);
+        GameObject sheep = _animalTemplates.FirstOrDefault(animal => animal.GetComponent<Sheep>());
+        GameObject cow = _animalTemplates.FirstOrDefault(animal => animal.GetComponent<Cow>());
+        GameObject bull = _animalTemplates.FirstOrDefault(animal => animal.GetComponent<Bull>());
+        _catchArea = _player.GetComponentInChildren<CatchArea>();
+        ClearPool();
+        Initialize(sheep,SheepCapacity);
+        Initialize(cow, CowCapacity);
+        Initialize(bull, BullCapacity);
         _currentAnimalsAmount = 0;
+        ShufflePool();
     }
     
     private void OnEnable()
@@ -72,7 +80,7 @@ public class AnimalSpawner : ObjectPool
 
     private void OnAnimalCatched(GameObject animal)
     {
-        if (_currentAnimalsAmount > -1)
+        if (_currentAnimalsAmount > 0)
         {
             _currentAnimalsAmount--;
         }

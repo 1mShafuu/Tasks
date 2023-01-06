@@ -11,7 +11,7 @@ public class PlayerCollisionHandler : MonoBehaviour
     private void Awake()
     {
         _unloader = GetComponent<AnimalsUnloader>();
-        _catchArea = GetComponent<CatchArea>();
+        _catchArea = GetComponentInChildren<CatchArea>();
     }
 
     private void OnTriggerEnter(Collider other)

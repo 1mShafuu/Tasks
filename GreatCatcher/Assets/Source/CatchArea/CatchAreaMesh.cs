@@ -5,23 +5,25 @@ using UnityEngine;
 
 public class CatchAreaMesh : MonoBehaviour
 {
-    [SerializeField] private float _distance;
     [SerializeField] private float _angle;
-    [SerializeField] private float _height;
-    [SerializeField] Color meshColor = Color.red;
+    [SerializeField] private Color meshColor = Color.red;
 
+    private float _distance;
     private Mesh _mesh;
     private MeshFilter _meshRenderer;
+    private CatchArea _catchArea;
 
     private void Awake()
     {
+        _catchArea = GetComponent<CatchArea>();
         _meshRenderer = GetComponent<MeshFilter>();
-        _meshRenderer.mesh = _mesh;
     }
 
-    private void OnValidate()
+    private void Start()
     {
+        _distance = _catchArea.Radius;
         _mesh = CreateWedgeMesh();
+        _meshRenderer.mesh = _mesh;
     }
 
     private Mesh CreateWedgeMesh()

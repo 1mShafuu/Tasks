@@ -7,75 +7,87 @@ public class CatchArea : MonoBehaviour
 {
     private const int MaxColliders = 7;
     
-    [SerializeField] private GameObject _catchAreaMesh;
+    [SerializeField] private MeshRenderer _catchAreaMesh;
 
-    private float _radius;
+    private float _radius = 5f;
     private float _elapsedTime;
     private Bag _bag;
     private float _viewAngle = 90;
+
+    public float Radius => _radius;
     
     public event Action<GameObject> AnimalCatched;
     
     private void Awake()
     {
-        _radius = 5f;
         _bag = GetComponentInParent<Bag>();
-        _catchAreaMesh.SetActive(false);
+        _catchAreaMesh = GetComponent<MeshRenderer>();
+        _catchAreaMesh.enabled = false;
     }
 
     private void Update()
     {
         Collider[] hits = new Collider[MaxColliders];
         Physics.OverlapSphereNonAlloc(transform.position, _radius, hits);
-        Collider catchTarget = null;
+        GameObject catchTarget = null;
         hits = hits.Where(hit => hit != null && hit.TryGetComponent(out Animal animal)).ToArray();
-        catchTarget = TryGetClosest(hits);
-        
-        Catch(catchTarget);
+
+        if (_bag.AnimalsInBag < _bag.MaxAmountOfAnimalsInBag)
+        {
+            catchTarget = TryGetClosest(hits);
+            Catch(catchTarget);
+        }
+        else
+        {
+            _catchAreaMesh.enabled = false;
+        }
     }
 
-    private void Catch(Collider target)
+    private void Catch(GameObject target)
     {
         var timeToCatch = 3f;
-
+        var angleDivider = 2;
+        var maxDegreesDelta = 5f;
+        
         if (target != null)
         {
             Vector3 directioToTarget = (target.transform.position - transform.position).normalized;
+            _catchAreaMesh.enabled = true;
             
-            if (Vector3.Angle(transform.forward, directioToTarget) < _viewAngle / 2)
+            if (Vector3.Angle(transform.forward, directioToTarget) < _viewAngle / angleDivider)
             {
                 _elapsedTime += Time.deltaTime;
-                _catchAreaMesh.SetActive(true);
                 var direction = (target.transform.position - transform.position).normalized;
                 direction.y = 0f;
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction),5f );
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction), maxDegreesDelta);
              
                 if (_elapsedTime >= timeToCatch)
                 {
                     _elapsedTime = 0;
-                    target.gameObject.SetActive(false);
-                    AnimalCatched?.Invoke(target.gameObject);
+                    target.SetActive(false);
+                    AnimalCatched?.Invoke(target);
                 }
             }
         }
         else
         {
-            _catchAreaMesh.SetActive(false);
+            _catchAreaMesh.enabled = false;
         }
     }
 
-    private Collider TryGetClosest(Collider[] hits)
+    private GameObject TryGetClosest(Collider[] hits)
     {
         var minDistanceToSheep = float.MaxValue;
-        Collider closestCollider = null;
+        GameObject closestCollider = null;
         
         foreach (var hit in hits)
         {
             float currentDistance = Vector3.Distance(transform.position, hit.gameObject.transform.position);
+            
             if (currentDistance < minDistanceToSheep)
             {
                 minDistanceToSheep = currentDistance;
-                closestCollider = hit;
+                closestCollider = hit.gameObject;
             }
         }
 

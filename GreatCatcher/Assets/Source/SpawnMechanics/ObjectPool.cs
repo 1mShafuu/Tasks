@@ -6,7 +6,9 @@ using Random = UnityEngine.Random;
 public class ObjectPool : MonoBehaviour
 {
     [SerializeField] private GameObject _animalsContainer;
-    [SerializeField] private int _animalsCapacity;
+    [SerializeField] protected int SheepCapacity;
+    [SerializeField] protected int CowCapacity;
+    [SerializeField] protected int BullCapacity;
     
     private readonly List<GameObject> _animalsPool = new List<GameObject>();
 
@@ -18,19 +20,11 @@ public class ObjectPool : MonoBehaviour
         }   
     }
 
-    protected void Initialize(List<GameObject> prefabs)
+    protected void Initialize(GameObject prefab, int spawnAmountPrefabs)
     {
-        for (int index = 0; index < _animalsPool.Count; index++)
+        for (int index = 0; index < spawnAmountPrefabs; index++)
         {
-            Destroy(_animalsPool[index]);
-        }
-        
-        _animalsPool.Clear();
-
-        for (int index = 0; index < _animalsCapacity; index++)
-        {
-            var randomPrefabNumber = Random.Range(0, prefabs.Count);
-            var currentPrefab = prefabs[randomPrefabNumber];
+            var currentPrefab = prefab;
             GameObject spawned = Instantiate(currentPrefab, _animalsContainer.transform);
             spawned.SetActive(false);
             _animalsPool.Add(spawned);
@@ -41,5 +35,27 @@ public class ObjectPool : MonoBehaviour
     {
         result = _animalsPool.FirstOrDefault(obstacle => obstacle.activeSelf == false);
         return result != null;
+    }
+
+    protected void ClearPool()
+    {
+        for (int index = 0; index < _animalsPool.Count; index++)
+        {
+            Destroy(_animalsPool[index]);
+        }
+        
+        _animalsPool.Clear();
+    }
+
+    protected void ShufflePool()
+    {
+        var firstElement = 0;
+        
+        for (int index = 0; index < _animalsPool.Count; index++)
+        {
+            GameObject temp = _animalsPool[firstElement];
+            _animalsPool.RemoveAt(firstElement);
+            _animalsPool.Insert(Random.Range(firstElement, _animalsPool.Count + 1), temp);
+        }
     }
 }
