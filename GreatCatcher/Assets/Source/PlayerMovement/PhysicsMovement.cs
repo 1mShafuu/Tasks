@@ -22,6 +22,8 @@ public class PhysicsMovement : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
+        const float maxDegreeDelta = 14f;
+        
         if (direction != Vector3.zero)
         {
             if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
@@ -30,7 +32,7 @@ public class PhysicsMovement : MonoBehaviour
             }
             
             Quaternion toRotation = Quaternion.LookRotation(direction,Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation,14f);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation,maxDegreeDelta);
         }
         else
         {

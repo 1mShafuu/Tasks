@@ -8,7 +8,8 @@ public class CatchArea : MonoBehaviour
     private const int MaxColliders = 7;
     
     [SerializeField] private MeshRenderer _catchAreaMesh;
-
+    
+    private Player _player;
     private float _radius = 5f;
     private float _elapsedTime;
     private Bag _bag;
@@ -20,6 +21,7 @@ public class CatchArea : MonoBehaviour
     
     private void Awake()
     {
+        _player = GetComponentInParent<Player>();
         _bag = GetComponentInParent<Bag>();
         _catchAreaMesh = GetComponent<MeshRenderer>();
         _catchAreaMesh.enabled = false;
@@ -45,11 +47,11 @@ public class CatchArea : MonoBehaviour
 
     private void Catch(GameObject target)
     {
-        var timeToCatch = 3f;
-        var angleDivider = 2;
-        var maxDegreesDelta = 5f;
+        const float timeToCatch = 3f;
+        const int angleDivider = 2;
+        const float maxDegreesDelta = 5f;
         
-        if (target != null)
+        if (target != null && target.GetComponent<Animal>().Level <= _player.Level)
         {
             Vector3 directioToTarget = (target.transform.position - transform.position).normalized;
             _catchAreaMesh.enabled = true;
@@ -75,7 +77,7 @@ public class CatchArea : MonoBehaviour
         }
     }
 
-    private GameObject TryGetClosest(Collider[] hits)
+    private GameObject TryGetClosest(IEnumerable<Collider> hits)
     {
         var minDistanceToSheep = float.MaxValue;
         GameObject closestCollider = null;
