@@ -31,12 +31,11 @@ public class CatchArea : MonoBehaviour
     {
         Collider[] hits = new Collider[MaxColliders];
         Physics.OverlapSphereNonAlloc(transform.position, _radius, hits);
-        GameObject catchTarget = null;
         hits = hits.Where(hit => hit != null && hit.TryGetComponent(out Animal animal)).ToArray();
 
         if (_bag.AnimalsInBag < _bag.MaxAmountOfAnimalsInBag)
         {
-            catchTarget = TryGetClosest(hits);
+            var catchTarget = TryGetClosest(hits);
             Catch(catchTarget);
         }
         else
@@ -51,8 +50,9 @@ public class CatchArea : MonoBehaviour
         const int angleDivider = 2;
         const float maxDegreesDelta = 5f;
         
-        if (target != null && target.GetComponent<Animal>().Level <= _player.Level)
+        if (target != null && target.TryGetComponent(out Animal animal))
         {
+            if (animal.Level > _player.Level) return;
             Vector3 directioToTarget = (target.transform.position - transform.position).normalized;
             _catchAreaMesh.enabled = true;
             

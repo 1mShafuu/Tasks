@@ -35,7 +35,7 @@ public class AnimalMovement : MonoBehaviour
         {
             _animator.Play("Locomotion");
             transform.position = Vector3.MoveTowards(transform.position, _targetMovement, _speed * Time.deltaTime);
-            transform.LookAt(_targetMovement);
+            //transform.LookAt(_targetMovement);
         }
         else
         {
