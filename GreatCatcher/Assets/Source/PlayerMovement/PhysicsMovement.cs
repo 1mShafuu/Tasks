@@ -22,7 +22,7 @@ public class PhysicsMovement : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
-        const float maxDegreeDelta = 14f;
+        const float maxDegreeDelta = 1f;
         
         if (direction != Vector3.zero)
         {

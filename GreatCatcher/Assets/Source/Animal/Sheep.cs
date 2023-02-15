@@ -7,6 +7,7 @@ public class Sheep : Animal
 {
     private void Awake()
     {
-        _level = 1;
+        Level = 1;
+        SellCost = 100;
     }
 }

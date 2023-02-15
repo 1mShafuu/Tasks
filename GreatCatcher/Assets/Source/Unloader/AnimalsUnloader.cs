@@ -8,7 +8,7 @@ public class AnimalsUnloader : MonoBehaviour
     [SerializeField] private GameObject[] _yards;
 
     private Bag _bag;
-
+    
     public event Action AnimalUnloaded;
     
     private void Awake()
@@ -20,14 +20,14 @@ public class AnimalsUnloader : MonoBehaviour
     {
         const int firstElement = 0;
         int amountAnimalsToUnload = _bag.AnimalsInBag;
-        Debug.Log(amountAnimalsToUnload);
+        //Debug.Log(amountAnimalsToUnload);
         
         foreach (var yard in _yards)
         {
-            if (yard.activeSelf == true)
+            if (yard.activeSelf)
             {
                 var activeYard = yard.transform;
-                Vector3 offset = new Vector3(-5, 3, 5);
+                Vector3 offset = new Vector3(-6, 3, 6);
                 
                 for (int index = 0; index < amountAnimalsToUnload; index++)
                 { 

@@ -11,20 +11,29 @@ public class CatchArea : MonoBehaviour
     
     private Player _player;
     private float _radius = 5f;
+    private float _timeToCatch = 3f;
     private float _elapsedTime;
     private Bag _bag;
+    private MeshCollider _collider;
     private float _viewAngle = 90;
 
     public float Radius => _radius;
+    public float ElapsedTime => _elapsedTime;
+    public float TimeToCatch => _timeToCatch;
     
     public event Action<GameObject> AnimalCatched;
-    
+
     private void Awake()
     {
+        _collider = GetComponent<MeshCollider>();
         _player = GetComponentInParent<Player>();
         _bag = GetComponentInParent<Bag>();
         _catchAreaMesh = GetComponent<MeshRenderer>();
-        _catchAreaMesh.enabled = false;
+    }
+
+    private void Start()
+    {
+        gameObject.SetActive(false);
     }
 
     private void Update()
@@ -32,41 +41,45 @@ public class CatchArea : MonoBehaviour
         Collider[] hits = new Collider[MaxColliders];
         Physics.OverlapSphereNonAlloc(transform.position, _radius, hits);
         hits = hits.Where(hit => hit != null && hit.TryGetComponent(out Animal animal)).ToArray();
+        var catchTarget = TryGetClosest(hits);
 
         if (_bag.AnimalsInBag < _bag.MaxAmountOfAnimalsInBag)
         {
-            var catchTarget = TryGetClosest(hits);
             Catch(catchTarget);
         }
         else
         {
             _catchAreaMesh.enabled = false;
+            _collider.enabled = false;
         }
     }
+    
 
     private void Catch(GameObject target)
     {
-        const float timeToCatch = 3f;
         const int angleDivider = 2;
-        const float maxDegreesDelta = 5f;
+        const float maxDegreesDelta = 360f;
         
         if (target != null && target.TryGetComponent(out Animal animal))
         {
             if (animal.Level > _player.Level) return;
-            Vector3 directioToTarget = (target.transform.position - transform.position).normalized;
+            Vector3 directionToTarget = (target.transform.position - transform.position).normalized;
             _catchAreaMesh.enabled = true;
             
-            if (Vector3.Angle(transform.forward, directioToTarget) < _viewAngle / angleDivider)
+            if (Vector3.Angle(transform.forward, directionToTarget) < _viewAngle / angleDivider)
             {
                 _elapsedTime += Time.deltaTime;
                 var direction = (target.transform.position - transform.position).normalized;
                 direction.y = 0f;
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction), maxDegreesDelta);
+                
+                _player.transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction), maxDegreesDelta);
              
-                if (_elapsedTime >= timeToCatch)
+                if (_elapsedTime >= _timeToCatch)
                 {
                     _elapsedTime = 0;
                     target.SetActive(false);
+                    target.TryGetComponent(out UIContainer uiContainer);
+                    uiContainer.CatchBar.TurnOffCanvas();
                     AnimalCatched?.Invoke(target);
                 }
             }

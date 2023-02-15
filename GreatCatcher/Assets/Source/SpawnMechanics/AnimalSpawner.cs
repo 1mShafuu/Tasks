@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class AnimalSpawner : ObjectPool
@@ -70,6 +71,7 @@ public class AnimalSpawner : ObjectPool
         if (TryGetObject(out _animal))
         {
             const float spawnPositionY = 3f;
+            //var canvas = _animal.GetComponentInChildren<Canvas>();
             Vector3 spawnPosition = Random.insideUnitSphere * SpawnRadius + transform.position;
             spawnPosition.y = spawnPositionY;
             _animal.SetActive(true);

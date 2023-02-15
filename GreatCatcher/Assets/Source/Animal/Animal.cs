@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
-    [SerializeField] protected int _level;
-
-    public int Level => _level;
+    public int Level { get; protected set; }
+    public int SellCost { get; protected set; }
 }

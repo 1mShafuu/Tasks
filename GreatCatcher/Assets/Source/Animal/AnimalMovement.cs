@@ -6,18 +6,19 @@ using Random = UnityEngine.Random;
 
 public class AnimalMovement : MonoBehaviour
 {
-    private const float ChangeTargetMovementTime = 10f;
-    private const float MaxDegreeDelta = 90f;
-    
+    private const float MinDistance = 2f;
+    private const float ChangeTargetMovementTime = 25f;
+
     private Vector3 _targetMovement;
     private Animator _animator;
-    private float _speed = 1.5f;
-    private float _minDistance = 2f;
+    private Rigidbody _rigidbody;
     private float _elapsedTime = 0;
+    private float _rotationSpeed = 2f;
     
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _rigidbody = GetComponent<Rigidbody>();
         GetNewTargetPosition();
     }
 
@@ -31,11 +32,14 @@ public class AnimalMovement : MonoBehaviour
             _elapsedTime = 0;
         }
         
-        if (Vector3.Distance(transform.position, _targetMovement) >= _minDistance)
+        if (Vector3.Distance(transform.position, _targetMovement) >= MinDistance)
         {
             _animator.Play("Locomotion");
-            transform.position = Vector3.MoveTowards(transform.position, _targetMovement, _speed * Time.deltaTime);
-            //transform.LookAt(_targetMovement);
+            Vector3 moveTo = transform.position + _targetMovement * Time.deltaTime;
+            moveTo.y = 0;
+            _rigidbody.MovePosition(moveTo);
+            Quaternion targetRotation = Quaternion.LookRotation(_targetMovement);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * _rotationSpeed);
         }
         else
         {
@@ -45,10 +49,9 @@ public class AnimalMovement : MonoBehaviour
 
     private void GetNewTargetPosition()
     {
-        const int radius = 10;
-        Vector3 newTargetPosition = Random.insideUnitSphere * radius + transform.position;
+        Vector3 newTargetPosition = Random.insideUnitSphere;
         newTargetPosition.y = 0;
-        _targetMovement = newTargetPosition;
+        _targetMovement = newTargetPosition.normalized;
     }
     
 }
