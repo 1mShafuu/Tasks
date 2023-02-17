@@ -12,19 +12,11 @@ public class UpgradePlayer : MonoBehaviour
 
    public int UpgradePrice { get; private set; } = 4500;
 
-   public event Action<int> LevelIncreased;
+   public event Action LevelIncreased;
 
    private void Awake()
    {
       _playerWallet = _player.GetComponent<Wallet>();
-   }
-
-   private void OnTriggerEnter(Collider other)
-   {
-      if (other.TryGetComponent(out Player player))
-      {
-         TryUpgradePlayer();
-      }
    }
 
    public bool TryUpgradePlayer()
@@ -32,15 +24,13 @@ public class UpgradePlayer : MonoBehaviour
       if (_player.TryGetComponent(out Wallet wallet))
       {
          _playerWallet = wallet;
-         var playerLevel = _player.Level;
-         Debug.Log(playerLevel);
-         
+
          if (_playerWallet.Money >= UpgradePrice)
          {
             _playerWallet.ChangeMoney(-UpgradePrice);
-            playerLevel++;
-            LevelIncreased?.Invoke(playerLevel);
-            Debug.Log(playerLevel);
+            LevelIncreased?.Invoke();
+            Debug.Log(_player.Level);
+            
             return true;
          }
       }

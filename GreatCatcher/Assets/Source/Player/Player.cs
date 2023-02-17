@@ -26,11 +26,11 @@ public class Player : MonoBehaviour
 
     public void InitUpgrader(UpgradePlayer upgrader)
     {
-        _upgrader = upgrader;
+        _upgrader = upgrader.GetComponent<UpgradePlayer>();
         _upgrader.LevelIncreased += OnLevelChanged;
     }
     
-    private void OnLevelChanged(int value)
+    private void OnLevelChanged()
     {
         _level++;
         Debug.Log(_level);

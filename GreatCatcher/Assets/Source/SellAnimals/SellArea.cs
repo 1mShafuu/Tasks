@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class SellArea : MonoBehaviour
 {
@@ -19,12 +20,12 @@ public class SellArea : MonoBehaviour
             _animals.Add(animal.gameObject);
         }
     }
-
-    private void OnTriggerExit(Collider other)
+    
+    public void ClearDeletedAnimals()
     {
-        if (other.TryGetComponent(out Animal animal))
+        if (_animals.All(clearedAnimal => clearedAnimal.activeInHierarchy))
         {
-            _animals.Remove(animal.gameObject);
+           _animals.Clear();
         }
     }
 }

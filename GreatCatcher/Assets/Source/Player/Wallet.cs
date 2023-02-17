@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Wallet : MonoBehaviour
 {
-   public int Money { get; private set; } = 5000;
+   public int Money { get; private set; } = 50000;
 
    public event Action<int> BalanceChanged;
 
@@ -16,7 +16,7 @@ public class Wallet : MonoBehaviour
 
    public void ChangeMoney(int value)
    {
-      if (Money >= Mathf.Abs(value))
+      if (Money+value >= 0)
       {
          Money += value;
       }

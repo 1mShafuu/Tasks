@@ -26,6 +26,8 @@ public class AnimalSeller : MonoBehaviour
         {
             SellAnimals(animalsToSell);
         }
+        
+        _sellArea.ClearDeletedAnimals();
     }
 
     private void SellAnimals(List<GameObject> animals)
@@ -41,4 +43,5 @@ public class AnimalSeller : MonoBehaviour
         
         _wallet.ChangeMoney(saleAmount);
     }
+    
 }
