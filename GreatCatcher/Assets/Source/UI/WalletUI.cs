@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -30,6 +27,5 @@ public class WalletUI : MonoBehaviour
     {
         var currentBalance = _wallet.Money;
         _text.text = currentBalance.ToString();
-        
     }
 }
