@@ -12,13 +12,15 @@ public class CatchAreaMesh : MonoBehaviour
     private Mesh _mesh;
     private MeshFilter _meshRenderer;
     private CatchArea _catchArea;
-    private MeshCollider _collider;
+    //private MeshCollider _collider;
+    private SphereCollider _collider;
     
     private void Awake()
     {
         _catchArea = GetComponent<CatchArea>();
         _meshRenderer = GetComponent<MeshFilter>();
-        _collider = GetComponent<MeshCollider>();
+        //_collider = GetComponent<MeshCollider>();
+        _collider = GetComponent<SphereCollider>();
     }
 
     private void Start()
@@ -26,7 +28,7 @@ public class CatchAreaMesh : MonoBehaviour
         _distance = _catchArea.Radius;
         _mesh = CreateWedgeMesh();
         _meshRenderer.mesh = _mesh;
-        _collider.sharedMesh = _mesh;
+        //_collider.sharedMesh = _mesh;
     }
 
     private Mesh CreateWedgeMesh()

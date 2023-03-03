@@ -22,6 +22,7 @@ public class CatchBar : MonoBehaviour
     private void OnEnable()
     {
         _container.AnimalDiscovered += OnAnimalDiscovered;
+        _slider.value = 0;
     }
 
     private void OnDisable()
@@ -34,11 +35,16 @@ public class CatchBar : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(transform.position - Camera.main.transform.position);
     }
 
+    public void TurnOnCanvas()
+    {
+        _canvas.enabled = true;
+    }
+    
     public void TurnOffCanvas()
     {
         _canvas.enabled = false;
     }
-    
+
     private void ValueChange(float value, float maxValue)
     {
         float uncertainty = 0.0000001f;
@@ -54,7 +60,7 @@ public class CatchBar : MonoBehaviour
     private void OnAnimalDiscovered(GameObject animal)
     {
         animal.TryGetComponent(out CatchArea area);
-        _canvas.enabled = true;
+        //_canvas.enabled = true;
         ValueChange(area.ElapsedTime, area.TimeToCatch);
     }
 }

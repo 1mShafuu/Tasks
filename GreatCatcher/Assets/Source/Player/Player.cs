@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private const int MaxLevel = 3;
-    
     private int _level = 1;
     private Wallet _wallet;
-    private UpgradePlayer _upgrader;
+    private PlayerUpgrader _upgrader;
     
     public int Level => _level;
+    public int MaxLevel { get; private set; } = 3;
 
     private void Awake()
     {
@@ -26,9 +25,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void InitUpgrader(UpgradePlayer upgrader)
+    public void InitUpgrader(PlayerUpgrader upgrader)
     {
-        _upgrader = upgrader.GetComponent<UpgradePlayer>();
+        _upgrader = upgrader.GetComponent<PlayerUpgrader>();
         _upgrader.LevelIncreased += OnLevelChanged;
     }
     
@@ -36,6 +35,5 @@ public class Player : MonoBehaviour
     {
         if (_level >= MaxLevel) return;
         _level++;
-        Debug.Log(_level);
     }
 }

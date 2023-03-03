@@ -36,7 +36,7 @@ public class PlayerCollisionHandler : MonoBehaviour
             _catchArea.enabled = false;
         }
 
-        if (other.TryGetComponent(out UpgradePlayer upgrader))
+        if (other.TryGetComponent(out PlayerUpgrader upgrader))
         {
             _player.InitUpgrader(upgrader);
             upgrader.TryUpgradePlayer();
