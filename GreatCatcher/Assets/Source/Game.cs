@@ -31,6 +31,11 @@ public class Game : MonoBehaviour
         _startScreen.Close();
         StartGame();
     }
+
+    private void OnCreditsButtonClicked()
+    {
+        
+    }
     
     private void StartGame()
     {

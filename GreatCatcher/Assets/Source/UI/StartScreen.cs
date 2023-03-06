@@ -21,11 +21,6 @@ public class StartScreen : MenuScreen
         RestartButton.interactable = false;
     }
 
-    protected override void OnCreditsButtonClicked()
-    {
-        
-    }
-
     protected override void OnRestartButtonClicked()
     {
         PlayButtonClicked?.Invoke();

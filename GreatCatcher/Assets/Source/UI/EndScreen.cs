@@ -1,31 +1,47 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
-public class EndScreen : MenuScreen
+public class EndScreen : MonoBehaviour
 {
-    public event UnityAction RestartButtonClicked;
-
-    protected override void OnRestartButtonClicked()
+    [SerializeField] private CanvasGroup _canvasGroup;
+    [SerializeField] private Button _backToStartScreenButton;
+    [SerializeField] private StartScreen _startScreen;
+    
+    private void OnEnable()
     {
-        RestartButtonClicked?.Invoke();
+        _canvasGroup.alpha = 0;
+        _canvasGroup.interactable = false;
+        _canvasGroup.blocksRaycasts = false;
+        _backToStartScreenButton.onClick.AddListener(OnBackToStartScreen);
     }
 
-    public override void Open()
+    private void OnDisable()
     {
-        CanvasGroup.alpha = 1;
-        RestartButton.interactable = true;
+        _backToStartScreenButton.onClick.RemoveListener(OnBackToStartScreen);
     }
 
-    public override void Close()
+    public void Open()
     {
-        CanvasGroup.alpha = 0;
-        RestartButton.interactable = false;
+        _canvasGroup.alpha = 1;
+        _canvasGroup.interactable = true;
+        _canvasGroup.blocksRaycasts = true;
+        _startScreen.Close();
     }
 
-    protected override void OnCreditsButtonClicked()
+    public void TurnOffCanvasGroup()
     {
-        
+        _canvasGroup.alpha = 0;
+    }
+    
+    private void OnBackToStartScreen()
+    {
+        _canvasGroup.alpha = 0;
+        _canvasGroup.interactable = false;
+        _canvasGroup.blocksRaycasts = false;
+        _startScreen.Open();
     }
 }

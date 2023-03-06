@@ -9,9 +9,11 @@ public abstract class MenuScreen : MonoBehaviour
     [SerializeField] protected Button RestartButton;
     [SerializeField] protected Button ExitButton;
     [SerializeField] protected Button CreditsButton;
-
+    [SerializeField] private EndScreen _creditsScreen;
+    
     private void OnEnable()
     {
+        _creditsScreen.TurnOffCanvasGroup();
         RestartButton.onClick.AddListener(OnRestartButtonClicked);
         ExitButton.onClick.AddListener(OnExitButtonClicked);
         CreditsButton.onClick.AddListener(OnCreditsButtonClicked);
@@ -35,5 +37,8 @@ public abstract class MenuScreen : MonoBehaviour
         Application.Quit();
     }
 
-    protected abstract void OnCreditsButtonClicked();
+    private void OnCreditsButtonClicked()
+    {
+        _creditsScreen.Open();
+    }
 }
