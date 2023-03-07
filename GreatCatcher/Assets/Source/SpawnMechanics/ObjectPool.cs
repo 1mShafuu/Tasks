@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,6 +11,7 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] protected int SheepCapacity;
     [SerializeField] protected int CowCapacity;
     [SerializeField] protected int BullCapacity;
+    [SerializeField] protected int ChickenCapacity;
     
     private readonly List<GameObject> _animalsPool = new List<GameObject>();
 
@@ -57,5 +60,10 @@ public class ObjectPool : MonoBehaviour
             _animalsPool.RemoveAt(firstElement);
             _animalsPool.Insert(Random.Range(firstElement, _animalsPool.Count + 1), temp);
         }
+    }
+
+    protected GameObject GetChicken()
+    {
+        return _animalsPool.FirstOrDefault(obstacle => obstacle.activeSelf == false && obstacle.TryGetComponent(out Chicken chicken));
     }
 }

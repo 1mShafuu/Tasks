@@ -7,4 +7,5 @@ public class Animal : MonoBehaviour
 {
     public int Level { get; protected set; }
     public int SellCost { get; protected set; }
+    
 }

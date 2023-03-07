@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ public class UpgradeYardButton : MonoBehaviour
    private int _upgradePrice = 20000;
    private Wallet _wallet;
 
+   public event Action YardUpgraded;
+   
    private void Start()
    {
       _wallet = _player.gameObject.GetComponent<Wallet>();
@@ -46,6 +49,7 @@ public class UpgradeYardButton : MonoBehaviour
          
          _yards[nextActiveYardIndex].SetActive(true);
          _upgradePrice *= 2;
+         YardUpgraded?.Invoke();
       }
    }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private GameObject _prarieEnterance;
+    
     private int _level = 1;
     private Wallet _wallet;
     private PlayerUpgrader _upgrader;
@@ -15,6 +17,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _wallet = GetComponent<Wallet>();
+        Physics.IgnoreCollision(GetComponent<CapsuleCollider>(), _prarieEnterance.GetComponent<BoxCollider>(), true);
     }
     
     private void OnDisable()

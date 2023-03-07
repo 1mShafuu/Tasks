@@ -10,7 +10,7 @@ public class PlayerUpgrader : MonoBehaviour
 
    private Wallet _playerWallet;
 
-   public int UpgradePrice { get; private set; } = 4500;
+   public int UpgradePrice { get; private set; } = 2000;
 
    public event Action LevelIncreased;
 
@@ -24,7 +24,7 @@ public class PlayerUpgrader : MonoBehaviour
       if (_player.TryGetComponent(out Wallet wallet))
       {
          _playerWallet = wallet;
-         const int priceMultiplier = 3;
+         const int priceMultiplier = 5;
 
          if (_playerWallet.Money >= UpgradePrice)
          {
