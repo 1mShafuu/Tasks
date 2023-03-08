@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Agava.YandexGames;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -26,6 +27,11 @@ public class Player : MonoBehaviour
         {
             _upgrader.LevelIncreased -= OnLevelChanged;
         }
+    }
+
+    private void Start()
+    {
+        PlayerAccount.GetPlayerData((data) => _level = Convert.ToInt32(data[0]));
     }
 
     public void InitUpgrader(PlayerUpgrader upgrader)

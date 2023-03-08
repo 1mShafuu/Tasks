@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Agava.YandexGames;
 using UnityEngine;
 
 public class Wallet : MonoBehaviour
@@ -12,6 +13,7 @@ public class Wallet : MonoBehaviour
    private void Start()
    {
       BalanceChanged?.Invoke(Money);
+      PlayerAccount.GetPlayerData((data) => Money=Convert.ToInt32(data.Substring(1)));
    }
 
    public void ChangeMoney(int value)

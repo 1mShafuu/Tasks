@@ -9,16 +9,16 @@ public class Game : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private StartScreen _startScreen;
 
-    private void Start()
+    private void Awake()
     {
-        YandexGamesSdk.Initialize();
-        Time.timeScale = 0;
-        _startScreen.Open();
+        YandexGamesSdk.CallbackLogging = true;
     }
 
     private void OnEnable()
     {
         _startScreen.PlayButtonClicked += OnPlayButtonClicked;
+        Time.timeScale = 0;
+        _startScreen.Open();
     }
 
     private void OnDisable()
@@ -30,11 +30,6 @@ public class Game : MonoBehaviour
     {
         _startScreen.Close();
         StartGame();
-    }
-
-    private void OnCreditsButtonClicked()
-    {
-        
     }
     
     private void StartGame()
