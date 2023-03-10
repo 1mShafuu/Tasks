@@ -12,12 +12,16 @@ public class StartScreen : MenuScreen
     public override void Open()
     {
         CanvasGroup.alpha = 1;
+        CanvasGroup.interactable = true;
+        CanvasGroup.blocksRaycasts = true;
         RestartButton.interactable = true;
     }
 
     public override void Close()
     {
         CanvasGroup.alpha = 0;
+        CanvasGroup.interactable = false;
+        CanvasGroup.blocksRaycasts = false;
         RestartButton.interactable = false;
     }
 

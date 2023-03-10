@@ -8,6 +8,12 @@ public class Game : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private StartScreen _startScreen;
+    [SerializeField] private EndScreen _winScreen;
+    
+    private Wallet _wallet;
+
+    public event Action GameStarted; 
+    public event Action GameEnded;
 
     private void Awake()
     {
@@ -16,8 +22,11 @@ public class Game : MonoBehaviour
 
     private void OnEnable()
     {
+        _wallet = _player.GetComponent<Wallet>();
         _startScreen.PlayButtonClicked += OnPlayButtonClicked;
+        _wallet.BalanceChanged += OnBalanceChanged;
         Time.timeScale = 0;
+        _winScreen.TurnOffCanvasGroup();
         _startScreen.Open();
     }
 
@@ -34,6 +43,18 @@ public class Game : MonoBehaviour
     
     private void StartGame()
     {
+        GameStarted?.Invoke();
         Time.timeScale = 1;
+    }
+
+    private void OnBalanceChanged(int value)
+    {
+        const int winCondition = 1000000;
+
+        if (value >= winCondition)
+        {
+            GameEnded?.Invoke();
+            _winScreen.Open();
+        }
     }
 }

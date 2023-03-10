@@ -6,12 +6,14 @@ using UnityEngine;
 public class UIContainer : MonoBehaviour
 {
     public CatchBar CatchBar { get; private set; }
+    public EquipSlotLock LockImage { get; private set; }
 
     public event Action<GameObject> AnimalDiscovered;
 
     private void Awake()
     {
         CatchBar = GetComponentInChildren<CatchBar>();
+        LockImage = GetComponentInChildren<EquipSlotLock>();
     }
 
     private void OnTriggerStay(Collider other)

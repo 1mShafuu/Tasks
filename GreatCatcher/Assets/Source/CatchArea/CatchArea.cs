@@ -46,36 +46,54 @@ public class CatchArea : MonoBehaviour
         Physics.OverlapSphereNonAlloc(transform.position, _radius, hits);
         hits = hits.Where(hit => hit != null && hit.TryGetComponent(out Animal animal)).ToArray();
         var catchTarget = TryGetClosest(hits);
-
-        if (_bag.AnimalsInBag < _bag.MaxAmountOfAnimalsInBag)
-        {
-            _collider.enabled = true;
-            Catch(catchTarget);
-        }
-        else
+        
+        if (_bag.AnimalsInBag >= _bag.MaxAmountOfAnimalsInBag)
         {
             _catchAreaMesh.enabled = false;
             _collider.enabled = false;
         }
+        
+        _collider.enabled = true;
+        
+        if (hits.Length != 0)
+        {
+            if (catchTarget.TryGetComponent(out UIContainer container))
+            {
+                container.CatchBar.TurnOnCanvas();
+                container.LockImage.Open();
+                Catch(catchTarget, container);
+            }
+        }
+        else
+        {
+            if (_lastTryCatchAnimal != null)
+            {
+                _lastTryCatchAnimal.TryGetComponent(out UIContainer lastTryCatchAnimalContainer);
+                lastTryCatchAnimalContainer.LockImage.Close();
+                lastTryCatchAnimalContainer.CatchBar.TurnOffCanvas();
+                _lastTryCatchAnimal = null;
+            }
+            
+            _catchAreaMesh.enabled = false;
+            _elapsedTime = 0;
+        }
     }
     
 
-    private void Catch(GameObject target)
+    private void Catch(GameObject target, UIContainer uiContainer)
     {
         const int angleDivider = 2;
         const float maxDegreesDelta = 30f;
 
-        if (target != null && target.TryGetComponent(out Animal animal))
+        if (target.TryGetComponent(out Animal animal))
         {
             if (animal.Level > _player.Level) return;
+            uiContainer.LockImage.Close();
             _lastTryCatchAnimal = target;
             Vector3 directionToTarget = (target.transform.position - transform.position).normalized;
-            target.TryGetComponent(out UIContainer uiContainer); 
-            var targetUI = uiContainer;
 
             if (Vector3.Angle(transform.forward, directionToTarget) < _viewAngle / angleDivider)
             {
-                targetUI.CatchBar.TurnOnCanvas();
                 _catchAreaMesh.enabled = true;
                 _elapsedTime += Time.deltaTime;
                 var direction = (target.transform.position - transform.position).normalized;
@@ -88,22 +106,10 @@ public class CatchArea : MonoBehaviour
                     _particleSystem.Play();
                     _elapsedTime = 0;
                     target.SetActive(false);
-                    //target.TryGetComponent(out UIContainer uiContainer);
-                    targetUI.CatchBar.TurnOffCanvas();
+                    uiContainer.CatchBar.TurnOffCanvas();
                     AnimalCatched?.Invoke(target);
                 }
             }
-        }
-        else
-        {
-            if (_lastTryCatchAnimal != null)
-            {
-                _lastTryCatchAnimal.TryGetComponent(out UIContainer uiContainer);
-                uiContainer.CatchBar.TurnOffCanvas();
-            }
-            
-            _catchAreaMesh.enabled = false;
-            _elapsedTime = 0;
         }
     }
 

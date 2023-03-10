@@ -60,7 +60,6 @@ public class CatchBar : MonoBehaviour
     private void OnAnimalDiscovered(GameObject animal)
     {
         animal.TryGetComponent(out CatchArea area);
-        //_canvas.enabled = true;
         ValueChange(area.ElapsedTime, area.TimeToCatch);
     }
 }

@@ -12,7 +12,7 @@ public class SellArea : MonoBehaviour
     private List<GameObject> _animals = new List<GameObject>();
     private int _currentYardLevel = 1;
     private int _changedYardLevel;
-    private int _maxAmountOfAnimals = 20;
+    private int _maxAmountOfAnimals = 2;
     
     public IReadOnlyList<GameObject> Animals => _animals;
 

@@ -31,6 +31,10 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+#if !UNITY_WEBGL || UNITY_EDITOR
+        return;
+#endif
+        
         PlayerAccount.GetPlayerData((data) => _level = Convert.ToInt32(data[0]));
     }
 
