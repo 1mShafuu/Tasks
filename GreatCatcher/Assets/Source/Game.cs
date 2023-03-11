@@ -44,7 +44,6 @@ public class Game : MonoBehaviour
     private void StartGame()
     {
         GameStarted?.Invoke();
-        Time.timeScale = 1;
     }
 
     private void OnBalanceChanged(int value)

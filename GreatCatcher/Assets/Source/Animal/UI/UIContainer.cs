@@ -26,4 +26,13 @@ public class UIContainer : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out CatchArea catchArea))
+        {
+            LockImage.Close();
+            CatchBar.TurnOffCanvas();
+        }
+    }
 }

@@ -10,7 +10,7 @@ public class UpgradeYardButton : MonoBehaviour
    [SerializeField] private Player _player;
    [SerializeField] private List<GameObject> _yards = new List<GameObject>();
 
-   private int _upgradePrice = 20000;
+   private int _upgradePrice = 10000;
    private Wallet _wallet;
 
    public event Action YardUpgraded;
@@ -48,7 +48,7 @@ public class UpgradeYardButton : MonoBehaviour
          }
          
          _yards[nextActiveYardIndex].SetActive(true);
-         _upgradePrice *= 2;
+         _upgradePrice *= 5;
          YardUpgraded?.Invoke();
       }
    }

@@ -22,12 +22,10 @@ public class Wallet : MonoBehaviour
       _game.GameEnded -= OnGameEnded;
    }
 
-   private void Start()
+   private IEnumerator Start()
    {
       BalanceChanged?.Invoke(Money);
-#if !UNITY_WEBGL || UNITY_EDITOR
-      return;
-#endif
+      yield return YandexGamesSdk.Initialize();
       PlayerAccount.GetPlayerData((data) => Money=Convert.ToInt32(data.Substring(1)));
    }
 

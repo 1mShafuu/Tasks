@@ -13,17 +13,10 @@ public class Tutorial : MonoBehaviour
     private int _currentChatNumber = 0;
     private int _lastChatNumber;
 
-    private void Awake()
-    {
-        foreach (var chat in _chats)
-        {
-            chat.Close();
-        }
-    }
+    public event Action TutorialEnded; 
 
     private void OnEnable()
     {
-        _chats[_currentChatNumber].Open();
         _nextChatButton.onClick.AddListener(OnButtonClicked);
         _game.GameStarted += OnGameStarted;
         _lastChatNumber = _chats.Length - 1;
@@ -32,12 +25,24 @@ public class Tutorial : MonoBehaviour
     private void OnDisable()
     {
         _nextChatButton.onClick.RemoveListener(OnButtonClicked);
+        _game.GameStarted -= OnGameStarted;
+    }
+
+    private void Start()
+    {
+        foreach (var chat in _chats)
+        {
+            chat.Close();
+        }
+        
+        _chats[_currentChatNumber].Open();
     }
 
     private void OnButtonClicked()
     {
         if (_currentChatNumber == _lastChatNumber)
         {
+            TutorialEnded?.Invoke();
             _chats[_currentChatNumber].Close();
             _nextChatButton.TryGetComponent(out Chat button);
             button.Close();

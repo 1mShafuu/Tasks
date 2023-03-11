@@ -29,12 +29,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
-#if !UNITY_WEBGL || UNITY_EDITOR
-        return;
-#endif
-        
+        yield return YandexGamesSdk.Initialize();
         PlayerAccount.GetPlayerData((data) => _level = Convert.ToInt32(data[0]));
     }
 
