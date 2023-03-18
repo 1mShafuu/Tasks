@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 public class AnimalSpawner : ObjectPool
 {
     private const int SpawnRadius = 70;
-    private const int AmountAllowedActiveAnimals = 11;
+    private const int AmountAllowedActiveAnimals = 13;
     
     [SerializeField] private List<GameObject> _animalTemplates;
     [SerializeField] private float _spawnCooldown;
@@ -43,13 +43,11 @@ public class AnimalSpawner : ObjectPool
     private void OnEnable()
     {
         _catchArea.AnimalCatched += OnAnimalCatched;
-        //ChickenDespawned += OnChickenSpawned;
     }
 
     private void OnDisable()
     {
         _catchArea.AnimalCatched -= OnAnimalCatched;
-        //ChickenDespawned -= OnChickenSpawned;
     }
 
     private void Start()

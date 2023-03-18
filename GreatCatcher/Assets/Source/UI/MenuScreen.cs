@@ -9,7 +9,7 @@ public abstract class MenuScreen : MonoBehaviour
     [SerializeField] protected Button RestartButton;
     [SerializeField] protected Button ExitButton;
     [SerializeField] protected Button CreditsButton;
-    [SerializeField] private EndScreen _creditsScreen;
+    [SerializeField] private SubStartScreen _creditsScreen;
     
     private void OnEnable()
     {

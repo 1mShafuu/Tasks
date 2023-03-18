@@ -9,11 +9,12 @@ public class AnimalSeller : MonoBehaviour
     [SerializeField] private GameObject _sellAreaGameObject;
     [SerializeField] private Player _player;
     [SerializeField] private UpgradeYardButton _yardUpgrader;
+    [SerializeField] private ParticleSystem _particleSystem;
     
     private Wallet _wallet;
     private SellArea _sellArea;
     private bool _isAbleToSell = false;
-    private float _animalSelloutPriceModifier = 2;
+    private float _animalSelloutPriceModifier = 1;
     
     private void Awake()
     {
@@ -36,24 +37,24 @@ public class AnimalSeller : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var animalsToSell = _sellArea.Animals.ToList();
-        
+
         if (other.TryGetComponent(out Player player) && animalsToSell.Count > 0 && _isAbleToSell)
         {
             SellAnimals(animalsToSell);
+            _sellArea.ClearDeletedAnimals();
+            _isAbleToSell = false;
         }
-        
-        _sellArea.ClearDeletedAnimals();
-        _isAbleToSell = false;
     }
 
     private void SellAnimals(List<GameObject> animals)
     {
         int saleAmount = 0;
-        
         foreach (var animalGameObject in animals)
         {
             animalGameObject.TryGetComponent(out Animal animal);
             saleAmount += Convert.ToInt32(animal.SellCost * _animalSelloutPriceModifier);
+            _particleSystem.transform.position = animalGameObject.transform.position;
+            _particleSystem.Play();
             Destroy(animalGameObject);
         }
         
@@ -67,6 +68,6 @@ public class AnimalSeller : MonoBehaviour
 
     private void OnYardUpgraded()
     {
-        _animalSelloutPriceModifier *= 1.8f;
+        _animalSelloutPriceModifier *= 2.1f;
     }
 }

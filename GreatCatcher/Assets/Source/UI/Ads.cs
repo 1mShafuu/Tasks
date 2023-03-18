@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,18 @@ public class Ads : MonoBehaviour
     [SerializeField] private TMP_Text _authorizationStatusText;
     [SerializeField] private TMP_Text _personalProfileDataPermissionStatusText;
     [SerializeField] private UltimateJoystick _joystick;
-    
+    [SerializeField] private WatchAdNotification _adNotification;
+
+    private void OnEnable()
+    {
+        _adNotification.WatchAdButtonClicked += OnWatchAdButtonClicked;
+    }
+
+    private void OnDisable()
+    {
+        _adNotification.WatchAdButtonClicked -= OnWatchAdButtonClicked;
+    }
+
     private IEnumerator Start()
     {
         yield return YandexGamesSdk.Initialize();
@@ -26,5 +38,13 @@ public class Ads : MonoBehaviour
 
             yield return new WaitForSecondsRealtime(0.25f);
         }
+    }
+
+    private void OnWatchAdButtonClicked()
+    {
+        Time.timeScale = 0;
+        VideoAd.Show();
+        Time.timeScale = 1;
+        _adNotification.Close();
     }
 }

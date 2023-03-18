@@ -8,7 +8,7 @@ public class Game : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private StartScreen _startScreen;
-    [SerializeField] private EndScreen _winScreen;
+    [SerializeField] private SubStartScreen _winScreen;
     
     private Wallet _wallet;
 

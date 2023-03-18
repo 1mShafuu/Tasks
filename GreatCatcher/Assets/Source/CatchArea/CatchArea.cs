@@ -9,13 +9,14 @@ public class CatchArea : MonoBehaviour
     
     [SerializeField] private MeshRenderer _catchAreaMesh;
     [SerializeField] private ParticleSystem _particleSystem;
-     
+    [SerializeField] private Transform _unloadAreaTarget;
+    
+    private ArrowRenderer _arrowRenderer;
     private Player _player;
     private float _radius = 5f;
     private float _timeToCatch = 3f;
     private float _elapsedTime;
     private Bag _bag;
-    //private MeshCollider _collider;
     private SphereCollider _collider;
     private float _viewAngle = 90;
     private GameObject _lastTryCatchAnimal;
@@ -28,11 +29,11 @@ public class CatchArea : MonoBehaviour
 
     private void Awake()
     {
-        //_collider = GetComponent<MeshCollider>();
         _collider = GetComponent<SphereCollider>();
         _player = GetComponentInParent<Player>();
         _bag = GetComponentInParent<Bag>();
         _catchAreaMesh = GetComponent<MeshRenderer>();
+        _arrowRenderer = _player.GetComponentInChildren<ArrowRenderer>();
     }
 
     private void Start()
@@ -51,7 +52,11 @@ public class CatchArea : MonoBehaviour
         {
             _catchAreaMesh.enabled = false;
             _collider.enabled = false;
+            _arrowRenderer.gameObject.SetActive(true);
+            _arrowRenderer.GetNewEndPoint(_unloadAreaTarget.position);
+            return;
         }
+        
         
         _collider.enabled = true;
         

@@ -32,10 +32,14 @@ public class Tutorial : MonoBehaviour
     {
         foreach (var chat in _chats)
         {
-            chat.Close();
+            chat.TryGetComponent(out PopUpAlerts alertToClose);
+            alertToClose.Close();
         }
         
-        _chats[_currentChatNumber].Open();
+        _chats[_currentChatNumber].TryGetComponent(out PopUpAlerts alertToOpen);
+        alertToOpen.Open();
+        _nextChatButton.TryGetComponent(out PopUpAlerts buttonToOpen);
+        buttonToOpen.Open();
     }
 
     private void OnButtonClicked()
@@ -43,16 +47,19 @@ public class Tutorial : MonoBehaviour
         if (_currentChatNumber == _lastChatNumber)
         {
             TutorialEnded?.Invoke();
-            _chats[_currentChatNumber].Close();
-            _nextChatButton.TryGetComponent(out Chat button);
+            _chats[_currentChatNumber].TryGetComponent(out PopUpAlerts alertToClose);
+            alertToClose.Close();
+            _nextChatButton.TryGetComponent(out PopUpAlerts button);
             button.Close();
             Time.timeScale = 1;
         }
         else
         {
-            _chats[_currentChatNumber].Close();
+            _chats[_currentChatNumber].TryGetComponent(out PopUpAlerts alertToClose);
+            alertToClose.Close();
             _currentChatNumber++;
-            _chats[_currentChatNumber].Open();
+            _chats[_currentChatNumber].TryGetComponent(out PopUpAlerts alertToOpen);
+            alertToOpen.Open();
         }
     }
 

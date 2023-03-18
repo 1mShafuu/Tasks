@@ -53,7 +53,7 @@ public class KeyboardInput : MonoBehaviour
     }
 
     private void OnTutorialEnded()
-    {
+    { 
         if (Application.isMobilePlatform)
         {
             _joystick.gameObject.SetActive(true);

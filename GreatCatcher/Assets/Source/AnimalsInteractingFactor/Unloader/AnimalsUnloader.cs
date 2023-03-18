@@ -46,7 +46,7 @@ public class AnimalsUnloader : MonoBehaviour
                     var activeYard = yard.transform;
                     activeYard.TryGetComponent(out Yard currentYard);
                     YardChose?.Invoke(currentYard.Level);
-                    Vector3 offset = new Vector3(-6, 3, 6);
+                    Vector3 offset = new Vector3(-6, 5, 6);
                 
                     for (int index = 0; index < amountAnimalsToUnload; index++)
                     { 

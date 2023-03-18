@@ -19,7 +19,7 @@ public class ArrowRenderer : MonoBehaviour
     [SerializeField] private Transform _target;
 
     Transform arrow;
-        
+
     readonly List<Transform> segments = new List<Transform>();
     readonly List<MeshRenderer> renderers = new List<MeshRenderer>();
 

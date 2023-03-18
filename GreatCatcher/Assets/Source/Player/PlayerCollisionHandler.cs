@@ -24,6 +24,7 @@ public class PlayerCollisionHandler : MonoBehaviour
         if (other.TryGetComponent(out UnloadArea area))
         {
             _unloader.Unload();
+            _arrowRenderer.gameObject.SetActive(false);
         }
 
         if (other.TryGetComponent(out PrairieEntrance entrance))

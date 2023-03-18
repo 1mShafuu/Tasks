@@ -49,9 +49,10 @@ public class AnimalMovement : MonoBehaviour
 
     private void GetNewTargetPosition()
     {
-        Vector3 newTargetPosition = Random.insideUnitSphere;
-        newTargetPosition.y = 0;
-        _targetMovement = newTargetPosition.normalized;
+        Vector2 newTargetPosition = Random.insideUnitCircle;
+        newTargetPosition = newTargetPosition.normalized;
+        _targetMovement.x = newTargetPosition.x;
+        _targetMovement.z = newTargetPosition.y;
     }
     
 }
