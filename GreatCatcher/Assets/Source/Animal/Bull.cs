@@ -9,4 +9,9 @@ public class Bull : Animal
         Level = 3;
         SellCost = 5000;
     }
+
+    public override Resource GetResource()
+    {
+        return new Meat();
+    }
 }

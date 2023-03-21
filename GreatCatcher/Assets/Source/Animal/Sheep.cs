@@ -10,4 +10,9 @@ public class Sheep : Animal
         Level = 1;
         SellCost = 100;
     }
+
+    public override Resource GetResource()
+    {
+        return new Wool();
+    }
 }

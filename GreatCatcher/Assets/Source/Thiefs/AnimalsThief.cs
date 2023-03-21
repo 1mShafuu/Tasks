@@ -31,7 +31,7 @@ public class AnimalsThief : MonoBehaviour
         if (Vector3.Distance(transform.position, _yardPositionForTheft.position) < MinDistance)
         {
             _collider.enabled = true;
-
+            Debug.Log(_stolenAnimals);
             if (_stolenAnimals >= _targetAmountOfStolenAnimals)
             {
                 _collider.enabled = false;
@@ -51,6 +51,11 @@ public class AnimalsThief : MonoBehaviour
 
     private void StealAnimals(Animal animal)
     {
+        if (_stolenAnimals >= _targetAmountOfStolenAnimals)
+        {
+            return;
+        }
+        
         animal.gameObject.TryGetComponent(out AnimalMovement movement);
         movement.enabled = false;
         animal.gameObject.transform.position = _stolenAnimalsPosition.position;

@@ -62,7 +62,7 @@ public class CatchArea : MonoBehaviour
         
         if (hits.Length != 0)
         {
-            if (catchTarget.TryGetComponent(out UIContainer container))
+            if (catchTarget.TryGetComponent(out AnimalUIContainer container))
             {
                 container.CatchBar.TurnOnCanvas();
                 container.LockImage.Open();
@@ -73,7 +73,7 @@ public class CatchArea : MonoBehaviour
         {
             if (_lastTryCatchAnimal != null)
             {
-                _lastTryCatchAnimal.TryGetComponent(out UIContainer lastTryCatchAnimalContainer);
+                _lastTryCatchAnimal.TryGetComponent(out AnimalUIContainer lastTryCatchAnimalContainer);
                 lastTryCatchAnimalContainer.LockImage.Close();
                 lastTryCatchAnimalContainer.CatchBar.TurnOffCanvas();
                 _lastTryCatchAnimal = null;
@@ -85,7 +85,7 @@ public class CatchArea : MonoBehaviour
     }
     
 
-    private void Catch(GameObject target, UIContainer uiContainer)
+    private void Catch(GameObject target, AnimalUIContainer animalUIContainer)
     {
         const int angleDivider = 2;
         const float maxDegreesDelta = 30f;
@@ -93,7 +93,7 @@ public class CatchArea : MonoBehaviour
         if (target.TryGetComponent(out Animal animal))
         {
             if (animal.Level > _player.Level) return;
-            uiContainer.LockImage.Close();
+            animalUIContainer.LockImage.Close();
             _lastTryCatchAnimal = target;
             Vector3 directionToTarget = (target.transform.position - transform.position).normalized;
 
@@ -111,7 +111,7 @@ public class CatchArea : MonoBehaviour
                     _particleSystem.Play();
                     _elapsedTime = 0;
                     target.SetActive(false);
-                    uiContainer.CatchBar.TurnOffCanvas();
+                    animalUIContainer.CatchBar.TurnOffCanvas();
                     AnimalCatched?.Invoke(target);
                 }
             }

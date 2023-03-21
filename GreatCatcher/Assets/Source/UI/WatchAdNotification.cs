@@ -14,6 +14,7 @@ public class WatchAdNotification : PopUpAlerts
     private void OnEnable()
     {
         _watchAdArea.PlayerEntered += OnPlayerEntered;
+        _watchAdArea.PlayerExit += OnPlayerExit;
         _watchVideoButton.interactable = false;
         _watchVideoButton.onClick.AddListener(OnButtonClicked);
     }
@@ -21,6 +22,7 @@ public class WatchAdNotification : PopUpAlerts
     private void OnDisable()
     {
         _watchAdArea.PlayerEntered -= OnPlayerEntered;
+        _watchAdArea.PlayerExit -= OnPlayerExit;
         _watchVideoButton.onClick.AddListener(OnButtonClicked);
     }
 
@@ -28,6 +30,12 @@ public class WatchAdNotification : PopUpAlerts
     {
         Open();
         _watchVideoButton.interactable = true;
+    }
+
+    private void OnPlayerExit()
+    {
+        Close();
+        _watchVideoButton.interactable = false;
     }
 
     private void OnButtonClicked()

@@ -9,11 +9,11 @@ public class CatchBar : MonoBehaviour
 {
     private Canvas _canvas;
     private Slider _slider;
-    private UIContainer _container;
+    private AnimalUIContainer _container;
     
     private void Awake()
     {
-        _container = GetComponentInParent<UIContainer>();
+        _container = GetComponentInParent<AnimalUIContainer>();
         _canvas = GetComponent<Canvas>();
         _slider = _canvas.GetComponentInChildren<Slider>();
         _canvas.enabled = false;

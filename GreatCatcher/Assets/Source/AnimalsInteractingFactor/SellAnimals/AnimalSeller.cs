@@ -49,6 +49,7 @@ public class AnimalSeller : MonoBehaviour
     private void SellAnimals(List<GameObject> animals)
     {
         int saleAmount = 0;
+        
         foreach (var animalGameObject in animals)
         {
             animalGameObject.TryGetComponent(out Animal animal);
