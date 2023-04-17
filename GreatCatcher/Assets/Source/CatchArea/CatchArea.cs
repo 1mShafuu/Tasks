@@ -25,7 +25,7 @@ public class CatchArea : MonoBehaviour
     public float ElapsedTime => _elapsedTime;
     public float TimeToCatch => _timeToCatch;
     
-    public event Action<GameObject> AnimalCatched;
+    public event Action<GameObject> AnimalCaught;
 
     private void Awake()
     {
@@ -56,7 +56,6 @@ public class CatchArea : MonoBehaviour
             _arrowRenderer.GetNewEndPoint(_unloadAreaTarget.position);
             return;
         }
-        
         
         _collider.enabled = true;
         
@@ -112,7 +111,7 @@ public class CatchArea : MonoBehaviour
                     _elapsedTime = 0;
                     target.SetActive(false);
                     animalUIContainer.CatchBar.TurnOffCanvas();
-                    AnimalCatched?.Invoke(target);
+                    AnimalCaught?.Invoke(target);
                 }
             }
         }

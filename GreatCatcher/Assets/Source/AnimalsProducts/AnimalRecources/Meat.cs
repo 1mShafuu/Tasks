@@ -14,4 +14,9 @@ public class Meat : Resource
     {
         return 1;
     }
+
+    public override int GetPrice()
+    {
+        return 800;
+    }
 }

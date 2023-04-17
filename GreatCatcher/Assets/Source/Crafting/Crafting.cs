@@ -1,40 +1,25 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Crafting : MonoBehaviour
 {
     [SerializeField] private Storage _storage;
-    
 
-    public void CraftMilkshake()
-    {
-        MilkShake milkshake = new MilkShake();
-        
-        if (milkshake.CanCraft(_storage))
-        {
-            milkshake.Craft(_storage);
-        }
-    }
+    private readonly CraftableItem[] _items = new CraftableItem[] {new Omelette(), new MilkShake(), new WoolenSweater()};
 
-    public void CraftOmelette()
-    {
-        Omelette omelette = new Omelette();
-        
-        if (omelette.CanCraft(_storage))
-        {
-            omelette.Craft(_storage);
-        }
-    }
+    public IReadOnlyList<CraftableItem> Items => _items;
+    public Storage Storage => _storage;
     
-    public void CraftWoolSweater()
+    public void CraftResource(ResourceUI item)
     {
-        WoolenSweater woolenSweater = new WoolenSweater();
-        
-        if (woolenSweater.CanCraft(_storage))
+        var resourceToCraft = _items.FirstOrDefault(resource => resource.GetName() == item.GetName());
+
+        if (resourceToCraft != null && resourceToCraft.CanCraft(_storage))
         {
-            woolenSweater.Craft(_storage);
+            resourceToCraft.Craft(_storage);
             _storage.ShowResources();
         }
     }

@@ -8,4 +8,6 @@ public abstract class Resource
     public abstract string GetName();
 
     public abstract int GetAmount();
+
+    public abstract int GetPrice();
 }

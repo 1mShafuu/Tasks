@@ -27,15 +27,16 @@ public class ResourceGainer : MonoBehaviour
             yield return waitForSeconds;
             
             _ownedAnimals.Clear();
+            
             foreach (var sellAreaAnimal in _sellArea.Animals)
             {
                 var ownedAnimal = sellAreaAnimal.gameObject.GetComponent<Animal>();
                 _ownedAnimals.Add(ownedAnimal);
             }
             
-            Debug.Log(_ownedAnimals.Count);
             foreach (var ownedAnimal in _ownedAnimals)
             {
+                Debug.Log("ResourceGainer");
                 _storage.Store(ownedAnimal.GetResource(), ownedAnimal.GetResource().GetAmount());
             }
         

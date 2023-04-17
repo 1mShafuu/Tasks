@@ -13,4 +13,9 @@ public class Milk : Resource
     {
         return 2;
     }
+
+    public override int GetPrice()
+    {
+        return 300;
+    }
 }

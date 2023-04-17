@@ -11,6 +11,11 @@ public class Wool : Resource
 
     public override int GetAmount()
     {
-        return 3;
+        return 1;
+    }
+
+    public override int GetPrice()
+    {
+        return 50;
     }
 }

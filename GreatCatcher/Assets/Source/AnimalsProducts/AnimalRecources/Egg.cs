@@ -13,4 +13,9 @@ public class Egg : Resource
     {
         return 1;
     }
+
+    public override int GetPrice()
+    {
+        return 20000;
+    }
 }

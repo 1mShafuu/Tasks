@@ -36,7 +36,6 @@ public class KeyboardInput : MonoBehaviour
 
     private void Update()
     {
-        
         if(Application.isMobilePlatform)
         {
             float horizontal = UltimateJoystick.GetHorizontalAxis("Movement");

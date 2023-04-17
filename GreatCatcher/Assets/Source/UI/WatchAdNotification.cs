@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WatchAdNotification : PopUpAlerts
+public class WatchAdNotification : SimpleMenu
 {
     [SerializeField] private Button _watchVideoButton;
     [SerializeField] private WatchAdArea _watchAdArea;
@@ -16,14 +16,19 @@ public class WatchAdNotification : PopUpAlerts
         _watchAdArea.PlayerEntered += OnPlayerEntered;
         _watchAdArea.PlayerExit += OnPlayerExit;
         _watchVideoButton.interactable = false;
-        _watchVideoButton.onClick.AddListener(OnButtonClicked);
+        _watchVideoButton.onClick.AddListener(OnWatchVideoButtonClicked);
     }
 
     private void OnDisable()
     {
         _watchAdArea.PlayerEntered -= OnPlayerEntered;
         _watchAdArea.PlayerExit -= OnPlayerExit;
-        _watchVideoButton.onClick.AddListener(OnButtonClicked);
+        _watchVideoButton.onClick.AddListener(OnWatchVideoButtonClicked);
+    }
+
+    protected override void OnButtonClicked()
+    {
+        throw new NotImplementedException();
     }
 
     private void OnPlayerEntered()
@@ -37,8 +42,8 @@ public class WatchAdNotification : PopUpAlerts
         Close();
         _watchVideoButton.interactable = false;
     }
-
-    private void OnButtonClicked()
+    
+    private void OnWatchVideoButtonClicked()
     {
         WatchAdButtonClicked?.Invoke();
     }

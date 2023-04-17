@@ -4,13 +4,6 @@ using UnityEngine;
 
 public abstract class CraftableItem : Resource, ICraftable
 {
-    protected int RequiredAmount;
-
-    public CraftableItem(int requiredAmount)
-    {
-        RequiredAmount = requiredAmount;
-    }
-
     public abstract Resource[] GetRequiredResources();
 
     public bool CanCraft(Storage storage)
@@ -34,7 +27,12 @@ public abstract class CraftableItem : Resource, ICraftable
         
         foreach (Resource resource in requiredResources)
         {
-            storage.Take(resource.GetName(), resource.GetAmount());
+            var c = 0;
+            Debug.Log($"{++c} {storage.TryTake(resource, resource.GetAmount())}");
+            if (storage.TryTake(resource, resource.GetAmount()))
+            {
+                storage.Take(resource.GetName(), resource.GetAmount());
+            }
         }
         
         storage.Store(this, this.GetAmount());

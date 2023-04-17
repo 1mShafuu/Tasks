@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Omelette : CraftableItem
 {
-    public Omelette() : base(1)
-    {
-    }
-
     public override string GetName()
     {
         return "Omelette";
@@ -18,8 +14,13 @@ public class Omelette : CraftableItem
         return 1;
     }
 
+    public override int GetPrice()
+    {
+        return 30000;
+    }
+
     public override Resource[] GetRequiredResources()
     {
-        return new Resource[] { new Egg(), new Milk(), new Milk() };
+        return new Resource[] { new Egg(), new Milk(), new Meat() };
     }
 }

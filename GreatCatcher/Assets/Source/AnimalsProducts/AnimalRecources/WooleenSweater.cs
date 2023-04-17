@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class WoolenSweater : CraftableItem
 {
-    public WoolenSweater() : base(1)
-    {
-    }
-
     public override string GetName()
     {
         return "WoolenSweater";
@@ -18,8 +14,13 @@ public class WoolenSweater : CraftableItem
         return 1;
     }
 
+    public override int GetPrice()
+    {
+        return 500;
+    }
+
     public override Resource[] GetRequiredResources()
     {
-        return new Resource[] { new Wool() };
+        return new Resource[] { new Wool(), new Wool()};
     }
 }

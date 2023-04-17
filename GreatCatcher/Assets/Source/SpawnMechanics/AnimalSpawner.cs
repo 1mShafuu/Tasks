@@ -42,12 +42,12 @@ public class AnimalSpawner : ObjectPool
     
     private void OnEnable()
     {
-        _catchArea.AnimalCatched += OnAnimalCatched;
+        _catchArea.AnimalCaught += OnAnimalCaught;
     }
 
     private void OnDisable()
     {
-        _catchArea.AnimalCatched -= OnAnimalCatched;
+        _catchArea.AnimalCaught -= OnAnimalCaught;
     }
 
     private void Start()
@@ -85,7 +85,7 @@ public class AnimalSpawner : ObjectPool
         }
     }
 
-    private void OnAnimalCatched(GameObject animal)
+    private void OnAnimalCaught(GameObject animal)
     {
         if (_currentAnimalsAmount > 0)
         {

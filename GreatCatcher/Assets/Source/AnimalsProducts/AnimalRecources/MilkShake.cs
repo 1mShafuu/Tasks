@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class MilkShake : CraftableItem
 {
-    public MilkShake() : base(2)
-    {
-    }
-
     public override string GetName()
     {
         return "MilkShake";
@@ -16,6 +12,11 @@ public class MilkShake : CraftableItem
     public override int GetAmount()
     {
         return 1;
+    }
+
+    public override int GetPrice()
+    {
+        return 25000;
     }
 
     public override Resource[] GetRequiredResources()

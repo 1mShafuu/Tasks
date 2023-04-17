@@ -25,17 +25,17 @@ public class Bag : MonoBehaviour
 
     private void OnEnable()
     {
-        _catchArea.AnimalCatched += OnAnimalCatched;
+        _catchArea.AnimalCaught += OnAnimalCaught;
         _unloader.AnimalUnloaded += OnAnimalUnloaded;
     }
 
     private void OnDisable()
     {
-        _catchArea.AnimalCatched -= OnAnimalCatched;
+        _catchArea.AnimalCaught -= OnAnimalCaught;
         _unloader.AnimalUnloaded -= OnAnimalUnloaded;
     }
     
-    private void OnAnimalCatched(GameObject animal)
+    private void OnAnimalCaught(GameObject animal)
     {
         _catchedAnimals.Add(animal);
         AnimalsAmountChanged?.Invoke(AnimalsInBag);

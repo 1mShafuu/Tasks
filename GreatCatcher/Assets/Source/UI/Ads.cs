@@ -42,8 +42,12 @@ public class Ads : MonoBehaviour
 
     private void OnWatchAdButtonClicked()
     {
-        Time.timeScale = 0;
+#if UNITY_WEBGL && !UNITY_EDITOR
+// Код только для WebGL билда
         VideoAd.Show();
+#endif
+        Time.timeScale = 0;
+        //VideoAd.Show();
         Time.timeScale = 1;
         _adNotification.Close();
     }
