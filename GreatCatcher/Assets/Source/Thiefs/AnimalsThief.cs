@@ -5,42 +5,54 @@ using UnityEngine;
 
 public class AnimalsThief : MonoBehaviour
 {
-    private const float MinDistance = 1.5f;
-
-    [SerializeField] private ParticleSystem _particleSystem;
+    public const float MinDistance = 1.5f;
+    
     [SerializeField] private Transform _yardPositionForTheft;
     [SerializeField] private Transform _stolenAnimalsPosition;
-    
+
     private int _targetAmountOfStolenAnimals = 2;
     private SphereCollider _collider;
-    private int _stolenAnimals = 0;
+    private AnimalsThiefMovement _animalsThiefMovement;
+    private int _stolenAnimalsForLastMove = 0;
 
     public Vector3 TargetMovement => _yardPositionForTheft.position;
     
     public event Action AnimalsAlreadyStolen;
-
+    
     private void OnEnable()
     {
         _collider = GetComponent<SphereCollider>();
+        _animalsThiefMovement = GetComponent<AnimalsThiefMovement>();
+        _animalsThiefMovement.EndPositionReached += OnEndPositionReached;
         _collider.enabled = false;
-        _stolenAnimals = 0;
+        _stolenAnimalsForLastMove = 0;
+    }
+
+    private void OnDisable()
+    {
+        _animalsThiefMovement.EndPositionReached -= OnEndPositionReached;
     }
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, _yardPositionForTheft.position) < MinDistance)
+        var distanceeBetweenTargets = Vector3.Distance(transform.position, _yardPositionForTheft.position);
+        var extendedMinDistance = MinDistance * 3;
+        
+        if (distanceeBetweenTargets <= extendedMinDistance)
         {
             _collider.enabled = true;
-            Debug.Log(_stolenAnimals);
-            if (_stolenAnimals >= _targetAmountOfStolenAnimals)
+            if (_stolenAnimalsForLastMove >= _targetAmountOfStolenAnimals || (distanceeBetweenTargets < MinDistance))
             {
                 _collider.enabled = false;
                 AnimalsAlreadyStolen?.Invoke();
             }
         }
+        else
+        {
+            _collider.enabled = false;
+        }
     }
-
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent(out Animal animal))
@@ -51,7 +63,7 @@ public class AnimalsThief : MonoBehaviour
 
     private void StealAnimals(Animal animal)
     {
-        if (_stolenAnimals >= _targetAmountOfStolenAnimals)
+        if (_stolenAnimalsForLastMove >= _targetAmountOfStolenAnimals)
         {
             return;
         }
@@ -59,6 +71,11 @@ public class AnimalsThief : MonoBehaviour
         animal.gameObject.TryGetComponent(out AnimalMovement movement);
         movement.enabled = false;
         animal.gameObject.transform.position = _stolenAnimalsPosition.position;
-        _stolenAnimals++;
+        _stolenAnimalsForLastMove++;
+    }
+
+    private void OnEndPositionReached()
+    {
+        _stolenAnimalsForLastMove = 0;
     }
 }

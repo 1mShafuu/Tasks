@@ -4,17 +4,28 @@ using UnityEngine;
 
 public class Storage : MonoBehaviour
 {
-    private Dictionary<string, List<int>> _resources = new Dictionary<string, List<int>>()
-    {
-        {"Milk", new List<int>()},
-        {"Wool", new List<int>()},
-        {"Meat", new List<int>()},
-        {"Egg", new List<int>()}
-    };
+    [SerializeField] private Game _game;
+    
+    private Dictionary<string, List<int>> _resources;
 
     public IReadOnlyDictionary<string, List<int>> Resources => _resources;
 
     public event Action<string, int> ResourcesChanged;
+
+    private void Awake()
+    {
+        SetResourcesAtStart();
+    }
+
+    private void OnEnable()
+    {
+        _game.GameEnded += OnGameEnded;
+    }
+
+    private void OnDisable()
+    {
+        _game.GameEnded -= OnGameEnded;
+    }
 
     private void Start()
     {
@@ -42,13 +53,10 @@ public class Storage : MonoBehaviour
         ResourcesChanged?.Invoke(resourceName, GetTotalAmount(resourceName));
     }
 
-    public bool TryTake(Resource resource, int amount)
+    public bool TryTake(string resourceName, int amount)
     {
-        string resourceName = resource.GetName();
-
         if (_resources.ContainsKey(resourceName) && _resources[resourceName].Count >= amount)
         {
-            _resources[resourceName].RemoveRange(0, amount);
             return true;
         }
 
@@ -65,7 +73,8 @@ public class Storage : MonoBehaviour
         if (_resources.ContainsKey(resourceName))
         {
             _resources[resourceName].RemoveRange(0, amount);
-            ResourcesChanged?.Invoke(resourceName, -amount);
+            ResourcesChanged?.Invoke(resourceName, GetTotalAmount(resourceName));
+            ShowResources();
         }
     }
 
@@ -73,7 +82,7 @@ public class Storage : MonoBehaviour
     {
         foreach (var resource in _resources)
         {
-            Debug.Log($"Name - {resource.Key}, Amount - {GetTotalAmount(resource.Key)}");
+           // Debug.Log($"Name - {resource.Key}, Amount - {GetTotalAmount(resource.Key)}");
         }
     }
     
@@ -92,5 +101,26 @@ public class Storage : MonoBehaviour
         }
 
         return 0;
+    }
+
+    private void SetResourcesAtStart()
+    {
+        _resources = new Dictionary<string, List<int>>()
+        {
+            { "Milk", new List<int>() },
+            { "Wool", new List<int>() },
+            { "Meat", new List<int>() },
+            { "Egg", new List<int>() }
+        };
+    }
+
+    private void OnGameEnded()
+    {
+        SetResourcesAtStart();
+        
+        foreach (var resource in _resources)
+        {
+            ResourcesChanged?.Invoke(resource.Key, GetTotalAmount(resource.Key));
+        }
     }
 }

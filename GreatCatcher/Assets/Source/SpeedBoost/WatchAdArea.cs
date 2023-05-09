@@ -47,6 +47,5 @@ public class WatchAdArea : MonoBehaviour
     private void OnWatchAdButtonClicked()
     {
         _movement.IncreaseSpeed();
-        Debug.Log("SPPPEEEEEDD");
     }
 }

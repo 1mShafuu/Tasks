@@ -36,9 +36,7 @@ public class ThiefAutomation : MonoBehaviour
         while (true)
         {
             yield return waitForSecondsBetweenSpawns;
-
             _movement.enabled = true;
-            
         }
     }
 

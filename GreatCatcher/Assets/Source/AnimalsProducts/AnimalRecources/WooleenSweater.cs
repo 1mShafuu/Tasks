@@ -6,7 +6,7 @@ public class WoolenSweater : CraftableItem
 {
     public override string GetName()
     {
-        return "WoolenSweater";
+        return "Woolen Sweater";
     }
 
     public override int GetAmount()

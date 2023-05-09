@@ -8,11 +8,12 @@ using Agava.YandexGames;
 public class SellArea : MonoBehaviour
 {
     [SerializeField] private AnimalsUnloader _unloader;
+    [SerializeField] private Game _game;
     
     private List<GameObject> _animals = new List<GameObject>();
     private int _currentYardLevel = 1;
     private int _changedYardLevel;
-    private int _maxAmountOfAnimals = 3;
+    private int _maxAmountOfAnimals = 10;
     
     public IReadOnlyList<GameObject> Animals => _animals;
 
@@ -22,11 +23,13 @@ public class SellArea : MonoBehaviour
     private void OnEnable()
     {
         _unloader.YardChose += OnYardChose;
+        _game.GameStarted += OnGameStarted;
     }
 
     private void OnDisable()
     {
         _unloader.YardChose -= OnYardChose;
+        _game.GameStarted -= OnGameStarted;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,13 +48,24 @@ public class SellArea : MonoBehaviour
             }
         }
     }
-    
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out Animal exitAnimal))
+        {
+            if (_animals.FirstOrDefault(animal => animal=exitAnimal.gameObject))
+            {
+                _animals.Remove(exitAnimal.gameObject);
+            }
+        }
+    }
+
     public void ClearDeletedAnimals()
     {
         if (_animals.All(clearedAnimal => clearedAnimal.activeInHierarchy))
-        {
+        { 
             _animals.Clear();
-           AnimalsLimitNotReached?.Invoke();
+            AnimalsLimitNotReached?.Invoke();
         }
     }
 
@@ -64,5 +78,15 @@ public class SellArea : MonoBehaviour
             _currentYardLevel = value;
             _maxAmountOfAnimals *= 2;
         }
+    }
+
+    private void OnGameStarted()
+    {
+        foreach (var animal in _animals)
+        {
+            Destroy(animal);
+        }
+        
+        ClearDeletedAnimals();
     }
 }

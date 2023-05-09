@@ -24,6 +24,11 @@ public class SaveProgressButton : MonoBehaviour
 
     private void OnSaveButtonClicked()
     {
-        PlayerAccount.SetPlayerData(_player.Level.ToString() + _wallet.Money.ToString());
+#if UNITY_WEBGL && !UNITY_EDITOR
+        if (PlayerAccount.IsAuthorized)
+        {
+            PlayerAccount.SetPlayerData(_player.Level.ToString() + _wallet.Money.ToString());
+        }
+#endif
     }
 }

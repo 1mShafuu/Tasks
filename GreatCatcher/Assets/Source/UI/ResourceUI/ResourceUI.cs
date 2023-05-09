@@ -17,7 +17,7 @@ public abstract class ResourceUI : MonoBehaviour
     public abstract List<string> GetCraftedResources();
 
     public abstract int GetPrice();
-    
+
     protected List<string> GetRequiredResourcesList(CraftableItem item)
     {
         var requiredResources = item.GetRequiredResources();

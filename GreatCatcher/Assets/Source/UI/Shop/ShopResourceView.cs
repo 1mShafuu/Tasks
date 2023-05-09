@@ -35,15 +35,37 @@ public class ShopResourceView : ResourceView
     public override void Render(ResourceUI resource, Crafting crafting = null)
     {
         ResourceUIElement = resource;
-        // Debug.Log(_resourceUI);
-        Label.text = resource.GetName();
+
+        if (ResourcesTranslations.ResourcesTranslationsDictionary.Count != 0)
+        {
+            foreach (var resourceTranslation in ResourcesTranslations.ResourcesTranslationsDictionary)
+            {
+                if (resourceTranslation.Key == resource.GetName())
+                {
+                    Label.text = resourceTranslation.Value;
+                    Debug.Log(Label.text);
+                }
+            }
+        }
+        else
+        {
+            Label.text = resource.GetName();
+        }
+
         Icon.sprite = resource.ResourceImage.sprite;
-        
     }
 
     protected override void OnButtonClicked()
     {
-        _wallet.ChangeMoney(-ResourceUIElement.GetPrice());
+        const int resourceAmountToSell = 1;
+        
+        //Debug.Log($"{ResourceUIElement.GetName()}   {resourceAmountToSell}");
+        if (_storage.TryTake(ResourceUIElement.GetName(), resourceAmountToSell))
+        {
+            _storage.Take(ResourceUIElement.GetName(),resourceAmountToSell);
+            _wallet.ChangeMoney(ResourceUIElement.GetPrice());
+           // Debug.Log(_wallet.Money);
+        }
     }
 
     private void OnResourcesChanged(string resourceName, int resourceAmount)

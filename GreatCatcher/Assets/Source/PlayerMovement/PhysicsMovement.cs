@@ -35,7 +35,7 @@ public class PhysicsMovement : MonoBehaviour
         {
             if (hitInfo.collider.isTrigger == false && !hitInfo.collider.TryGetComponent(out InvisibleWallToIgnore wall))
             {
-                Debug.Log("Препятствие обнаружено: " + hitInfo.collider.name);
+                //Debug.Log("Препятствие обнаружено: " + hitInfo.collider.name);
                 return; // Останавливаем выполнение метода, если есть препятствие
             }
         }

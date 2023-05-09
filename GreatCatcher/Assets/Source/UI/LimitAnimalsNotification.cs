@@ -30,7 +30,7 @@ public class LimitAnimalsNotification : MonoBehaviour
         StartCoroutine(ToggleObject());
     }
 
-    IEnumerator ToggleObject()
+    private IEnumerator ToggleObject()
     {
         var waitForSeconds = new WaitForSeconds(_activeSeconds);
         _message.SetActive(true);

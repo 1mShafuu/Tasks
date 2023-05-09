@@ -1,11 +1,24 @@
 {
   "dependencies": {
+    "com.agava.webutility": {
+      "version": "https://github.com/forcepusher/com.agava.webutility.git#2.2.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e43645cd0e6dabaf9c791247417203c8301502fb"
+    },
     "com.agava.yandexgames": {
       "version": "https://github.com/forcepusher/com.agava.yandexgames.git#11.2.0",
       "depth": 0,
       "source": "git",
       "dependencies": {},
       "hash": "e6d74d2a2e4b2e43b2d185b1d25aa62a3e8ef6d5"
+    },
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
     },
     "com.unity.collab-proxy": {
       "version": "1.17.7",
@@ -45,7 +58,7 @@
       }
     },
     "com.unity.ide.rider": {
-      "version": "3.0.18",
+      "version": "3.0.21",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -141,7 +154,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.6.4",
+      "version": "1.6.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {

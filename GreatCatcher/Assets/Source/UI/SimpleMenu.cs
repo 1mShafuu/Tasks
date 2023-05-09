@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public abstract class SimpleMenu : MonoBehaviour
 {
-    [SerializeField] protected Button _button;
+    [SerializeField] private Button _button;
     
     private CanvasGroup _canvasGroup;
 

@@ -20,6 +20,7 @@ public class Tutorial : MonoBehaviour
         _nextChatButton.onClick.AddListener(OnButtonClicked);
         _game.GameStarted += OnGameStarted;
         _lastChatNumber = _chats.Length - 1;
+        Time.timeScale = 0;
     }
 
     private void OnDisable()
@@ -44,18 +45,19 @@ public class Tutorial : MonoBehaviour
 
     private void OnButtonClicked()
     {
+        _chats[_currentChatNumber].TryGetComponent(out SimpleMenu alertToClose);
+        _nextChatButton.TryGetComponent(out SimpleMenu button);
+        
         if (_currentChatNumber == _lastChatNumber)
         {
             TutorialEnded?.Invoke();
-            _chats[_currentChatNumber].TryGetComponent(out SimpleMenu alertToClose);
             alertToClose.Close();
-            _nextChatButton.TryGetComponent(out SimpleMenu button);
             button.Close();
             Time.timeScale = 1;
+            _currentChatNumber = 0;
         }
         else
         {
-            _chats[_currentChatNumber].TryGetComponent(out SimpleMenu alertToClose);
             alertToClose.Close();
             _currentChatNumber++;
             _chats[_currentChatNumber].TryGetComponent(out SimpleMenu alertToOpen);
@@ -65,6 +67,6 @@ public class Tutorial : MonoBehaviour
 
     private void OnGameStarted()
     {
-        Time.timeScale = 0;
+       // Time.timeScale = 0;
     }
 }

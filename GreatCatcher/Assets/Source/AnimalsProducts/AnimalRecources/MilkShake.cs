@@ -6,7 +6,7 @@ public class MilkShake : CraftableItem
 {
     public override string GetName()
     {
-        return "MilkShake";
+        return "Milkshake";
     }
 
     public override int GetAmount()

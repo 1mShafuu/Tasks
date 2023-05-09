@@ -26,6 +26,7 @@ public class SubStartScreen : MonoBehaviour
 
     public void Open()
     {
+        Time.timeScale = 0;
         _canvasGroup.alpha = 1;
         _canvasGroup.interactable = true;
         _canvasGroup.blocksRaycasts = true;

@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class PlayerUpgrader : MonoBehaviour
 {
-   
    [SerializeField] private Player _player;
-
+   [SerializeField] private ParticleSystem _particleSystem;
+   
    private Wallet _playerWallet;
 
    public int UpgradePrice { get; private set; } = 6000;
@@ -28,6 +28,7 @@ public class PlayerUpgrader : MonoBehaviour
 
          if (_playerWallet.Money >= UpgradePrice)
          {
+            _particleSystem.Play();
             _playerWallet.ChangeMoney(-UpgradePrice);
             UpgradePrice = (int)(UpgradePrice * priceMultiplier);
             LevelIncreased?.Invoke();

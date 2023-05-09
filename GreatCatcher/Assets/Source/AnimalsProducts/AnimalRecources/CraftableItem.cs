@@ -27,9 +27,7 @@ public abstract class CraftableItem : Resource, ICraftable
         
         foreach (Resource resource in requiredResources)
         {
-            var c = 0;
-            Debug.Log($"{++c} {storage.TryTake(resource, resource.GetAmount())}");
-            if (storage.TryTake(resource, resource.GetAmount()))
+            if (storage.TryTake(resource.GetName(), resource.GetAmount()))
             {
                 storage.Take(resource.GetName(), resource.GetAmount());
             }

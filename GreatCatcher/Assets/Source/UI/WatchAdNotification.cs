@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class WatchAdNotification : SimpleMenu
 {
     [SerializeField] private Button _watchVideoButton;
+    [SerializeField] private Button _exitButton;
     [SerializeField] private WatchAdArea _watchAdArea;
 
     public event Action WatchAdButtonClicked;
@@ -17,13 +18,15 @@ public class WatchAdNotification : SimpleMenu
         _watchAdArea.PlayerExit += OnPlayerExit;
         _watchVideoButton.interactable = false;
         _watchVideoButton.onClick.AddListener(OnWatchVideoButtonClicked);
+        _exitButton.onClick.AddListener(OnExitButtonClicked);
     }
 
     private void OnDisable()
     {
         _watchAdArea.PlayerEntered -= OnPlayerEntered;
         _watchAdArea.PlayerExit -= OnPlayerExit;
-        _watchVideoButton.onClick.AddListener(OnWatchVideoButtonClicked);
+        _watchVideoButton.onClick.RemoveListener(OnWatchVideoButtonClicked);
+        _exitButton.onClick.RemoveListener(OnExitButtonClicked);
     }
 
     protected override void OnButtonClicked()
@@ -46,5 +49,10 @@ public class WatchAdNotification : SimpleMenu
     private void OnWatchVideoButtonClicked()
     {
         WatchAdButtonClicked?.Invoke();
+    }
+
+    private void OnExitButtonClicked()
+    {
+        Close();
     }
 }
