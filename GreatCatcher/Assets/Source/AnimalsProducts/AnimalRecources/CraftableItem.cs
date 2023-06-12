@@ -4,15 +4,34 @@ using UnityEngine;
 
 public abstract class CraftableItem : Resource, ICraftable
 {
+    private Dictionary<string, int> _requiredResources;
+    
     public abstract Resource[] GetRequiredResources();
-
+    
     public bool CanCraft(Storage storage)
     {
         Resource[] requiredResources = GetRequiredResources();
-        
-        foreach (Resource resource in requiredResources)
+        _requiredResources = new Dictionary<string, int>();
+
+        foreach (var resource in requiredResources)
         {
-            if (!storage.Contains(resource.GetName(), resource.GetAmount()))
+            string key = resource.GetName();
+            
+            if (_requiredResources.ContainsKey(key))
+            {
+                _requiredResources[key] += 1;
+            }
+            else
+            {
+                _requiredResources[key] = 1;
+            }
+        }
+
+        foreach (string key in _requiredResources.Keys)
+        {
+            int amount = _requiredResources[key];
+            
+            if (!storage.Contains(key, amount))
             {
                 return false;
             }
@@ -33,6 +52,6 @@ public abstract class CraftableItem : Resource, ICraftable
             }
         }
         
-        storage.Store(this, this.GetAmount());
+        storage.Store(this, GetAmount());
     }
 }

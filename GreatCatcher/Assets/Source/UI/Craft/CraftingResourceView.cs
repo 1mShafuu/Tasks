@@ -20,7 +20,6 @@ public class CraftingResourceView : ResourceView
                 if (resourceTranslation.Key == resource.GetName())
                 {
                     Label.text = resourceTranslation.Value;
-                    Debug.Log(Label.text);
                 }
             }
         }

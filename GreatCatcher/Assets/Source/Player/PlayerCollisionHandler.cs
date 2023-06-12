@@ -6,17 +6,17 @@ using UnityEngine;
 
 public class PlayerCollisionHandler : MonoBehaviour
 {
+    [SerializeField] private ArrowRenderer _arrowRenderer;
+    
     private AnimalsUnloader _unloader;
     private CatchArea _catchArea;
     private Player _player;
-    private ArrowRenderer _arrowRenderer;
     
     private void Awake()
     {
         _player = GetComponent<Player>();
         _unloader = GetComponent<AnimalsUnloader>();
         _catchArea = GetComponentInChildren<CatchArea>();
-        _arrowRenderer = GetComponentInChildren<ArrowRenderer>();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -4,6 +4,7 @@ using Agava.YandexGames;
 
 public class Game : MonoBehaviour
 {
+    //private const int WinCondition = 10000;
     private const int WinCondition = 1000000;
     public const int MaxPoints = 105000000;
     
@@ -47,15 +48,14 @@ public class Game : MonoBehaviour
 #if UNITY_WEBGL && !UNITY_EDITOR
         PlayerAccount.RequestPersonalProfileDataPermission();
 #endif
-        // PlayerAccount.RequestPersonalProfileDataPermission();
     }
 
     private void OnBalanceChanged(int value)
     {
         if (value >= WinCondition)
         {
-            _scoreCounter.ResetScore();
             ScoreToLeaderboard = _scoreCounter.Score;
+            _scoreCounter.ResetScore();
             GameEnded?.Invoke();
             _winScreen.Open();
         }

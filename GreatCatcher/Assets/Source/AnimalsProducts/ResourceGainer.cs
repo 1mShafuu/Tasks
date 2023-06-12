@@ -36,7 +36,7 @@ public class ResourceGainer : MonoBehaviour
             
             foreach (var ownedAnimal in _ownedAnimals)
             {
-                Debug.Log("ResourceGainer");
+                //Debug.Log("ResourceGainer");
                 _storage.Store(ownedAnimal.GetResource(), ownedAnimal.GetResource().GetAmount());
             }
         

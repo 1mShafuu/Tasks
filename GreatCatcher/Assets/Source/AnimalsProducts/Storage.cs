@@ -39,7 +39,7 @@ public class Storage : MonoBehaviour
 
     public void Store(Resource resource, int amount)
     {
-        string resourceName = resource.GetName();
+        var resourceName = resource.GetName();
 
         if (_resources.ContainsKey(resourceName))
         {
@@ -65,6 +65,7 @@ public class Storage : MonoBehaviour
 
     public bool Contains(string resourceName, int amount)
     {
+        //Debug.Log($"{GetTotalAmount(resourceName)}          {amount}     {GetTotalAmount(resourceName) >= amount}");
         return GetTotalAmount(resourceName) >= amount;
     }
     
@@ -82,10 +83,10 @@ public class Storage : MonoBehaviour
     {
         foreach (var resource in _resources)
         {
-           // Debug.Log($"Name - {resource.Key}, Amount - {GetTotalAmount(resource.Key)}");
+            //Debug.Log($"Name - {resource.Key}, Amount - {GetTotalAmount(resource.Key)}");
         }
     }
-    
+
     private int GetTotalAmount(string resourceName)
     {
         if (_resources.ContainsKey(resourceName))
@@ -110,7 +111,10 @@ public class Storage : MonoBehaviour
             { "Milk", new List<int>() },
             { "Wool", new List<int>() },
             { "Meat", new List<int>() },
-            { "Egg", new List<int>() }
+            { "Egg", new List<int>() },
+            { "Cookie", new List<int>() },
+            { "Omelette", new List<int>() },
+            { "Woolen Sweater", new List<int>() }
         };
     }
 

@@ -12,6 +12,7 @@ public class Ads : MonoBehaviour
     [SerializeField] private Image _personalProfileDataPermissionStatusImage;
     [SerializeField] private WatchAdNotification _adNotification;
 
+    public event Action<string> LanguageReceived;
     private Action _videoClosed;
 
     private void Awake()
@@ -39,6 +40,8 @@ public class Ads : MonoBehaviour
 #if UNITY_WEBGL && !UNITY_EDITOR
         yield return YandexGamesSdk.Initialize();
 
+        LanguageReceived?.Invoke(YandexGamesSdk.Environment.i18n.lang);
+        
         while (true)
         {
             _authorizationStatusImage.color = PlayerAccount.IsAuthorized ? Color.green : Color.red;

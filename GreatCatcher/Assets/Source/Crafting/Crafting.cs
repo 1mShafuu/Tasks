@@ -8,7 +8,7 @@ public class Crafting : MonoBehaviour
 {
     [SerializeField] private Storage _storage;
 
-    private readonly CraftableItem[] _items = new CraftableItem[] {new Omelette(), new MilkShake(), new WoolenSweater()};
+    private readonly CraftableItem[] _items = new CraftableItem[] {new Omelette(), new Cookie(), new WoolenSweater()};
 
     public IReadOnlyList<CraftableItem> Items => _items;
     public Storage Storage => _storage;

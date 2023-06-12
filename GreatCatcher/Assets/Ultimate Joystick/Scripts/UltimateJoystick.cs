@@ -302,7 +302,7 @@ public class UltimateJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler
 
 		// Apply the tempVector to the joystick's position.
 		joystick.transform.position = ( Vector2 )joystickCenter + tempVector;
-		
+
 		// If the user is showing highlight and the highlightJoystick is assigned, then move the highlight to match the joystick's position.
 		if( updateHighlightPosition == true )
 			highlightJoystick.transform.position = joystick.transform.position;
@@ -587,7 +587,7 @@ public class UltimateJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler
 	void UpdatePositionValues ()
 	{
 		Vector2 rawJoystickPosition = ( joystick.position - joystickCenter ) / radius;
-
+		
 		if( GetDistance() <= deadZone )
 		{
 			rawJoystickPosition.x = 0.0f;

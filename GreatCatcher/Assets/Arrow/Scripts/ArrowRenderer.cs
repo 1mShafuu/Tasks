@@ -40,7 +40,7 @@ public class ArrowRenderer : MonoBehaviour
         start = _player.gameObject.transform.position;
         UpdateSegments();
     }
-
+    
     public void GetNewEndPoint(Vector3 newEndPoint)
     {
         end = newEndPoint;

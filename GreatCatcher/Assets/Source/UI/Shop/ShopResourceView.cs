@@ -43,7 +43,6 @@ public class ShopResourceView : ResourceView
                 if (resourceTranslation.Key == resource.GetName())
                 {
                     Label.text = resourceTranslation.Value;
-                    Debug.Log(Label.text);
                 }
             }
         }
@@ -59,18 +58,16 @@ public class ShopResourceView : ResourceView
     {
         const int resourceAmountToSell = 1;
         
-        //Debug.Log($"{ResourceUIElement.GetName()}   {resourceAmountToSell}");
         if (_storage.TryTake(ResourceUIElement.GetName(), resourceAmountToSell))
         {
             _storage.Take(ResourceUIElement.GetName(),resourceAmountToSell);
             _wallet.ChangeMoney(ResourceUIElement.GetPrice());
-           // Debug.Log(_wallet.Money);
         }
     }
 
     private void OnResourcesChanged(string resourceName, int resourceAmount)
     {
-        if (Label.text == resourceName)
+        if (ResourceUIElement.GetName() == resourceName)
         {
             _amountText.text = resourceAmount.ToString();
         }

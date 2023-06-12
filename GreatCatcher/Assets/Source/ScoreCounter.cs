@@ -26,6 +26,7 @@ public class ScoreCounter : MonoBehaviour
         _multiplier -= _elapsedTime * scoreMultiplierDecrease;
         _multiplier = Math.Max(1f, _multiplier);
         Score = Convert.ToInt32(Game.MaxPoints * _multiplier);
+        //Debug.Log(Score);
     }
 
     public void ResetScore()

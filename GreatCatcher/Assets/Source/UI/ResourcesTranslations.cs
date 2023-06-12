@@ -14,6 +14,8 @@ public static class ResourcesTranslations
     
     public static void InitTranslations()
     {
+        _resourcesTranslations.Clear();
+        
         var previousLanguage = LeanLocalization.GetFirstCurrentLanguage();
         var resourcesPreviousLanguage = LeanLocalization.GetTranslationText("TranslationResources").Split(",").ToList();
         

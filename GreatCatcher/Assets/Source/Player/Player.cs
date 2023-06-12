@@ -1,15 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Agava.YandexGames;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private GameObject _prarieEnterance;
+    [SerializeField] private PlayerInfoHolder _playerInfoHolder;
     
     private int _level = 1;
-    private Wallet _wallet;
     private PlayerUpgrader _upgrader;
     
     public int Level => _level;
@@ -17,10 +13,14 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        _wallet = GetComponent<Wallet>();
         Physics.IgnoreCollision(GetComponent<CapsuleCollider>(), _prarieEnterance.GetComponent<BoxCollider>(), true);
     }
-    
+
+    private void OnEnable()
+    {
+        _playerInfoHolder.AddFieldChangedCallback(OnStatsGained);
+    }
+
     private void OnDisable()
     {
         if (_upgrader != null)
@@ -28,13 +28,6 @@ public class Player : MonoBehaviour
             _upgrader.LevelIncreased -= OnLevelChanged;
         }
     }
-
-//     private IEnumerator Start()
-//     {
-// #if UNITY_WEBGL && !UNITY_EDITOR
-//        // PlayerAccount.GetPlayerData((data) => _level = Convert.ToInt32(data[0]));
-// #endif
-//     }
 
     public void InitUpgrader(PlayerUpgrader upgrader)
     {
@@ -46,5 +39,13 @@ public class Player : MonoBehaviour
     {
         if (_level >= MaxLevel) return;
         _level++;
+    }
+
+    private void OnStatsGained()
+    {
+        if (_playerInfoHolder.PlayerInfoStats.Level > 0)
+        {
+            _level = _playerInfoHolder.PlayerInfoStats.Level;
+        }
     }
 }

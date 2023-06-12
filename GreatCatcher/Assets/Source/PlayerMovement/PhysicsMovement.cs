@@ -27,7 +27,7 @@ public class PhysicsMovement : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
-        const float maxDegreeDelta = 4f;
+        const float maxDegreeDelta = 10f;
         
         RaycastHit hitInfo;
         

@@ -37,6 +37,7 @@ public class WatchAdNotification : SimpleMenu
     private void OnPlayerEntered()
     {
         Open();
+        Time.timeScale = 1;
         _watchVideoButton.interactable = true;
     }
 

@@ -12,6 +12,7 @@ public class Tutorial : MonoBehaviour
 
     private int _currentChatNumber = 0;
     private int _lastChatNumber;
+    private bool _isTutorialShown = false;
 
     public event Action TutorialEnded; 
 
@@ -31,6 +32,7 @@ public class Tutorial : MonoBehaviour
 
     private void Start()
     {
+        if (_isTutorialShown) return;
         foreach (var chat in _chats)
         {
             chat.TryGetComponent(out SimpleMenu alertToClose);
@@ -51,6 +53,7 @@ public class Tutorial : MonoBehaviour
         if (_currentChatNumber == _lastChatNumber)
         {
             TutorialEnded?.Invoke();
+            _isTutorialShown = true;
             alertToClose.Close();
             button.Close();
             Time.timeScale = 1;

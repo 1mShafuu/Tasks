@@ -9,6 +9,7 @@ public class LanguageChanger : MonoBehaviour
     [SerializeField] private Button _englishLanguageButton;
     [SerializeField] private Button _russianLanguageButton;
     [SerializeField] private Button _turkishLanguageButton;
+    [SerializeField] private Ads _ads;
 
     public event Action LanguageChanged;
 
@@ -17,6 +18,7 @@ public class LanguageChanger : MonoBehaviour
         _englishLanguageButton.onClick.AddListener(OnEnglishLanguageButtonClicked);
         _russianLanguageButton.onClick.AddListener(OnRussianLanguageButtonClicked);
         _turkishLanguageButton.onClick.AddListener(OnTurkishLanguageButtonClicked);
+        _ads.LanguageReceived += OnLanguageReceived;
     }
     
     private void OnDisable()
@@ -24,11 +26,7 @@ public class LanguageChanger : MonoBehaviour
         _englishLanguageButton.onClick.RemoveListener(OnEnglishLanguageButtonClicked);
         _russianLanguageButton.onClick.RemoveListener(OnRussianLanguageButtonClicked);
         _turkishLanguageButton.onClick.RemoveListener(OnTurkishLanguageButtonClicked);
-    }
-
-    private void Start()
-    {
-        
+        _ads.LanguageReceived -= OnLanguageReceived;
     }
 
     private void OnEnglishLanguageButtonClicked()
@@ -48,6 +46,28 @@ public class LanguageChanger : MonoBehaviour
     private void OnTurkishLanguageButtonClicked()
     {
         Lean.Localization.LeanLocalization.SetCurrentLanguageAll("Arabic");
+        ResourcesTranslations.InitTranslations();
+        LanguageChanged?.Invoke();
+    }
+
+    private void OnLanguageReceived(string language)
+    {
+        switch (language)
+        {
+            case "en":
+                Lean.Localization.LeanLocalization.SetCurrentLanguageAll("English");
+                break;
+            case "ru":
+                Lean.Localization.LeanLocalization.SetCurrentLanguageAll("Russian");
+                break;
+            case "tr":
+                Lean.Localization.LeanLocalization.SetCurrentLanguageAll("Arabic");
+                break;
+            default:
+                Lean.Localization.LeanLocalization.SetCurrentLanguageAll("English");
+                break;
+        }
+        
         ResourcesTranslations.InitTranslations();
         LanguageChanged?.Invoke();
     }

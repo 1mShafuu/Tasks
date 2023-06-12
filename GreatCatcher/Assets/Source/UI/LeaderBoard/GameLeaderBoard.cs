@@ -7,12 +7,14 @@ using Random = UnityEngine.Random;
 
 public class GameLeaderBoard : MonoBehaviour
 {
-    private const string LeaderBoardName = "WinnersBoard";
+    private const string LeaderBoardName = "Winnersboard";
     
     [SerializeField] private Game _game;
     [SerializeField] private LeaderBoardUI _leaderBoardUI;
     
     private List<PlayerLeaderboardInfo> _playersInLeaderBoard = new List<PlayerLeaderboardInfo>();
+    
+    public string PlayerName { get; private set; }
 
     public event Action PointsEnteredInTheTable;
     
@@ -42,7 +44,9 @@ public class GameLeaderBoard : MonoBehaviour
             else
                 Debug.Log($"My rank = {result.rank}, score = {result.score}");
             
-            Leaderboard.SetScore(LeaderBoardName, _game.ScoreToLeaderboard);
+            if(result.score <= _game.ScoreToLeaderboard)
+                Leaderboard.SetScore(LeaderBoardName, _game.ScoreToLeaderboard);
+                
         });
 #endif
         PointsEnteredInTheTable?.Invoke();
@@ -69,7 +73,7 @@ public class GameLeaderBoard : MonoBehaviour
             Leaderboard.GetEntries(LeaderBoardName, (result) =>
             {
                 Debug.Log($"My rank = {result.userRank}");
-
+                
                 int resultsAmount = result.entries.Length;
 
                 resultsAmount = Mathf.Clamp(resultsAmount, 1, 5);
