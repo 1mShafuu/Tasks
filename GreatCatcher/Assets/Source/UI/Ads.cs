@@ -4,7 +4,6 @@ using UnityEngine;
 using Agava.YandexGames;
 using Agava.WebUtility;
 using UnityEngine.UI;
-using DeviceType = Agava.YandexGames.DeviceType;
 
 public class Ads : MonoBehaviour
 {
@@ -22,6 +21,7 @@ public class Ads : MonoBehaviour
 
     private void OnEnable()
     {
+        StartCoroutine(InitSDK());
         WebApplication.InBackgroundChangeEvent += OnOnInBackgroundChanged;
         _adNotification.WatchAdButtonClicked += OnWatchAdButtonClicked;
         _videoClosed += OnVideoClosed;
@@ -34,9 +34,8 @@ public class Ads : MonoBehaviour
         _videoClosed -= OnVideoClosed;
     }
 
-    private IEnumerator Start()
+    private IEnumerator InitSDK()
     {
-        yield return null;
 #if UNITY_WEBGL && !UNITY_EDITOR
         yield return YandexGamesSdk.Initialize();
 
@@ -58,6 +57,8 @@ public class Ads : MonoBehaviour
 
             yield return new WaitForSecondsRealtime(0.25f);
         }
+#else
+        yield return null;
 #endif
     }
     
@@ -65,7 +66,6 @@ public class Ads : MonoBehaviour
     {
         Time.timeScale = 0;
 #if UNITY_WEBGL && !UNITY_EDITOR
-// Код только для WebGL билда
         VideoAd.Show(null, null , _videoClosed);
 #endif
     }

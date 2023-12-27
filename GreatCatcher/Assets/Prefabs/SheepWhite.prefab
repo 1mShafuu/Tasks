@@ -1485,7 +1485,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &4140158398585893144
 MonoBehaviour:
@@ -2369,18 +2369,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1077172218856222250, guid: a9cc89733e5f54ea68eea81721314bba, type: 3}
   m_PrefabInstance: {fileID: 635630012992670054}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8733362867451315298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441586186496599884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff48e456d69af6b4b9fc100bd69350c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!225 &2954237510973307229
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2393,3 +2381,15 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &8733362867451315298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441586186496599884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff48e456d69af6b4b9fc100bd69350c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

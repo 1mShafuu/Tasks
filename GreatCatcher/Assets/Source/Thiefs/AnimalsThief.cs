@@ -41,11 +41,12 @@ public class AnimalsThief : MonoBehaviour
         if (distanceeBetweenTargets <= extendedMinDistance)
         {
             _collider.enabled = true;
-            if (_stolenAnimalsForLastMove >= _targetAmountOfStolenAnimals || (distanceeBetweenTargets < MinDistance))
-            {
-                _collider.enabled = false;
-                AnimalsAlreadyStolen?.Invoke();
-            }
+
+            if (_stolenAnimalsForLastMove < _targetAmountOfStolenAnimals &&
+                (!(distanceeBetweenTargets < MinDistance))) return;
+            
+            _collider.enabled = false;
+            AnimalsAlreadyStolen?.Invoke();
         }
         else
         {
@@ -63,11 +64,8 @@ public class AnimalsThief : MonoBehaviour
 
     private void StealAnimals(Animal animal)
     {
-        if (_stolenAnimalsForLastMove >= _targetAmountOfStolenAnimals)
-        {
-            return;
-        }
-        
+        if (_stolenAnimalsForLastMove >= _targetAmountOfStolenAnimals) return;
+
         animal.gameObject.TryGetComponent(out AnimalMovement movement);
         movement.enabled = false;
         animal.gameObject.transform.position = _stolenAnimalsPosition.position;

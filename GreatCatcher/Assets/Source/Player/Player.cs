@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public const int MaxLevel = 3;
+    
     [SerializeField] private GameObject _prarieEnterance;
     [SerializeField] private PlayerInfoHolder _playerInfoHolder;
     
@@ -9,8 +12,9 @@ public class Player : MonoBehaviour
     private PlayerUpgrader _upgrader;
     
     public int Level => _level;
-    public int MaxLevel { get; private set; } = 3;
 
+    public event Action LevelChanged;
+    
     private void Awake()
     {
         Physics.IgnoreCollision(GetComponent<CapsuleCollider>(), _prarieEnterance.GetComponent<BoxCollider>(), true);
@@ -39,6 +43,7 @@ public class Player : MonoBehaviour
     {
         if (_level >= MaxLevel) return;
         _level++;
+        LevelChanged?.Invoke();
     }
 
     private void OnStatsGained()

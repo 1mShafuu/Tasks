@@ -35,7 +35,7 @@ public class LimitAnimalsNotification : Notification
         _message.transform.LeanScale(Vector2.zero, 1f).setEaseInBack();
     }
     
-    private void OnAnimalsLimitReached()
+    private void OnAnimalsLimitReached(int value)
     {
         if (_coroutine != null)
         {

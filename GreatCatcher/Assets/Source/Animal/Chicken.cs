@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chicken : Animal
+public class Chicken : Animal, ICatchable
 {
     private void Awake()
     {

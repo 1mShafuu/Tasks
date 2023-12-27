@@ -10,8 +10,9 @@ public class CatchArea : MonoBehaviour
     [SerializeField] private MeshRenderer _catchAreaMesh;
     [SerializeField] private ParticleSystem _particleSystem;
     [SerializeField] private Transform _unloadAreaTarget;
+    [SerializeField] private ArrowRenderer _arrowRenderer;
+    [SerializeField] private Animator _animator;
     
-    private ArrowRenderer _arrowRenderer;
     private Player _player;
     private float _radius = 5f;
     private float _timeToCatch = 3f;
@@ -24,6 +25,7 @@ public class CatchArea : MonoBehaviour
     public float Radius => _radius;
     public float ElapsedTime => _elapsedTime;
     public float TimeToCatch => _timeToCatch;
+    public int PlayerLevel => _player.Level;
     
     public event Action<GameObject> AnimalCaught;
 
@@ -33,7 +35,6 @@ public class CatchArea : MonoBehaviour
         _player = GetComponentInParent<Player>();
         _bag = GetComponentInParent<Bag>();
         _catchAreaMesh = GetComponent<MeshRenderer>();
-        _arrowRenderer = _player.GetComponentInChildren<ArrowRenderer>();
     }
 
     private void Start()
@@ -45,7 +46,7 @@ public class CatchArea : MonoBehaviour
     {
         Collider[] hits = new Collider[MaxColliders];
         Physics.OverlapSphereNonAlloc(transform.position, _radius, hits);
-        hits = hits.Where(hit => hit != null && hit.TryGetComponent(out Animal animal)).ToArray();
+        hits = hits.Where(hit => hit != null && hit.TryGetComponent(out Animal animal) && !animal.IsCaught).ToArray();
         var catchTarget = TryGetClosest(hits);
         
         if (_bag.AnimalsInBag >= _bag.MaxAmountOfAnimalsInBag)
@@ -61,11 +62,20 @@ public class CatchArea : MonoBehaviour
         
         if (hits.Length != 0)
         {
+            catchTarget.TryGetComponent(out Animal possibleAnimal);
+            
+            if (possibleAnimal.IsCaught) return;
+            
             if (catchTarget.TryGetComponent(out AnimalUIContainer container))
             {
-                container.CatchBar.TurnOnCanvas();
                 container.LockImage.Open();
-                Catch(catchTarget, container);
+                container.CatchBar.TurnOnCanvas();
+                
+                if (possibleAnimal.Level <= _player.Level)
+                {
+                    _animator.SetBool("IsCatching", true); 
+                    Catch(catchTarget, container);
+                }
             }
         }
         else
@@ -78,6 +88,7 @@ public class CatchArea : MonoBehaviour
                 _lastTryCatchAnimal = null;
             }
             
+            _animator.SetBool("IsCatching", false);
             _catchAreaMesh.enabled = false;
             _elapsedTime = 0;
         }
@@ -103,7 +114,7 @@ public class CatchArea : MonoBehaviour
                 var direction = (target.transform.position - transform.position).normalized;
                 direction.y = 0f;
                 _player.transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(direction), maxDegreesDelta);
-             
+         
                 if (_elapsedTime >= _timeToCatch)
                 {
                     _particleSystem.gameObject.transform.position = target.transform.position;
@@ -112,6 +123,7 @@ public class CatchArea : MonoBehaviour
                     target.SetActive(false);
                     animalUIContainer.CatchBar.TurnOffCanvas();
                     AnimalCaught?.Invoke(target);
+                    _animator.SetBool("IsCatching", false);
                 }
             }
         }
@@ -125,12 +137,11 @@ public class CatchArea : MonoBehaviour
         foreach (var hit in hits)
         {
             float currentDistance = Vector3.Distance(transform.position, hit.gameObject.transform.position);
+
+            if (!(currentDistance < minDistanceToSheep)) continue;
             
-            if (currentDistance < minDistanceToSheep)
-            {
-                minDistanceToSheep = currentDistance;
-                closestCollider = hit.gameObject;
-            }
+            minDistanceToSheep = currentDistance;
+            closestCollider = hit.gameObject;
         }
 
         return closestCollider;

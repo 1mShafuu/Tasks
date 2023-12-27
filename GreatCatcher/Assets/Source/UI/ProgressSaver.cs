@@ -17,27 +17,36 @@ public class ProgressSaver : MonoBehaviour
     private Wallet _wallet;
     private int _currentLevelYard = 1;
     private PlayerInfo _playerInfoSavingBlueprint;
-
-    private void Awake()
-    {
-        StartCoroutine(GetPlayerData());
-    }
-
+    
     private void OnEnable()
     {
         _wallet = _player.GetComponent<Wallet>();
-        _saveButton.onClick.AddListener(OnSaveButtonClicked);
+        //_saveButton.onClick.AddListener(OnSaveButtonClicked);
+        _wallet.BalanceChanged += OnBalanceChanged;
+        _player.LevelChanged += OnSaveButtonClicked;
         _animalsUnloader.YardChose += OnYardChosen;
         _game.GameEnded += OnGameEnded;
     }
 
     private void OnDisable()
     {
-        _saveButton.onClick.RemoveListener(OnSaveButtonClicked);
+       // _saveButton.onClick.RemoveListener(OnSaveButtonClicked);
+       _player.LevelChanged -= OnSaveButtonClicked;
+        _wallet.BalanceChanged -= OnBalanceChanged;
         _animalsUnloader.YardChose -= OnYardChosen;
         _game.GameEnded -= OnGameEnded;
     }
     
+    private void Start()
+    {
+        StartCoroutine(GetPlayerData());
+    }
+
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        //OnSaveButtonClicked();
+    }
+
     private IEnumerator GetPlayerData()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -45,7 +54,7 @@ public class ProgressSaver : MonoBehaviour
 
        if (PlayerAccount.IsAuthorized && YandexGamesSdk.IsInitialized)
        {
-          PlayerAccount.GetPlayerData(HandleJson);
+          PlayerAccount.GetCloudSaveData(HandleJson);
        }
 #else
         yield return null;
@@ -55,15 +64,15 @@ public class ProgressSaver : MonoBehaviour
     private void OnSaveButtonClicked()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
-        if (PlayerAccount.IsAuthorized)
+        if (YandexGamesSdk.IsInitialized)
         {
             _playerInfoSavingBlueprint = new PlayerInfo();
             _playerInfoSavingBlueprint.Wallet = _wallet.Money;
             _playerInfoSavingBlueprint.Level = _player.Level;
             _playerInfoSavingBlueprint.Yard = _currentLevelYard;
             PlayerInfoJson playerInfoJson = new PlayerInfoJson();
-            PlayerAccount.SetPlayerData(playerInfoJson.SaveJSONToString(_playerInfoSavingBlueprint));
-            Debug.Log($"{_currentLevelYard}  {_playerInfoSavingBlueprint.Wallet}  {_playerInfoSavingBlueprint.Level}");
+            PlayerAccount.SetCloudSaveData(playerInfoJson.SaveJSONToString(_playerInfoSavingBlueprint));
+           // Debug.Log($" Сохранение {_currentLevelYard}  {_playerInfoSavingBlueprint.Wallet}  {_playerInfoSavingBlueprint.Level}");
         }
 #endif
     }
@@ -72,7 +81,11 @@ public class ProgressSaver : MonoBehaviour
     {
         if (yardLevel is >= 1 and <= 3)
         {
-            _currentLevelYard = yardLevel;
+            if (yardLevel != _currentLevelYard)
+            {
+                _currentLevelYard = yardLevel;
+                OnSaveButtonClicked();
+            }
         }
     }
 
@@ -88,8 +101,8 @@ public class ProgressSaver : MonoBehaviour
                 Yard = 1
             };
             PlayerInfoJson playerInfoJson = new PlayerInfoJson();
-            PlayerAccount.SetPlayerData(playerInfoJson.SaveJSONToString(_playerInfoSavingBlueprint));
-            Debug.Log($"{_currentLevelYard}  {_playerInfoSavingBlueprint.Wallet}  {_playerInfoSavingBlueprint.Level}");
+            PlayerAccount.SetCloudSaveData(playerInfoJson.SaveJSONToString(_playerInfoSavingBlueprint));
+           // Debug.Log($" Игра окончена {_currentLevelYard}  {_playerInfoSavingBlueprint.Wallet}  {_playerInfoSavingBlueprint.Level}");
         }  
 #endif
     }
@@ -99,5 +112,10 @@ public class ProgressSaver : MonoBehaviour
         var playerStats = PlayerInfoJson.CreateFromJSONFile(possibleData);
        // Debug.Log($" HandleJSON  {playerStats.Yard}    {playerStats.Wallet}  {playerStats.Level}");
         _playerInfoHolder.GetPlayerStats(playerStats);
+    }
+
+    private void OnBalanceChanged(int value)
+    {
+        OnSaveButtonClicked();
     }
 }

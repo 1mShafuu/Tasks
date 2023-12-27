@@ -7,6 +7,7 @@ public class AnimalUIContainer : MonoBehaviour
 {
     public CatchBar CatchBar { get; private set; }
     public EquipSlotLock LockImage { get; private set; }
+    public Animal AnimalToCatch { get; private set; }
 
     public event Action<GameObject> AnimalDiscovered;
 
@@ -14,6 +15,7 @@ public class AnimalUIContainer : MonoBehaviour
     {
         CatchBar = GetComponentInChildren<CatchBar>();
         LockImage = GetComponentInChildren<EquipSlotLock>();
+        AnimalToCatch = GetComponent<Animal>();
     }
 
     private void OnTriggerStay(Collider other)

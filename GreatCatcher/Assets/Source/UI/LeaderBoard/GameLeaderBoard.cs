@@ -59,7 +59,7 @@ public class GameLeaderBoard : MonoBehaviour
         {
             for (int index = 0; index < 5; index++)
             {
-                _playersInLeaderBoard.Add(new PlayerLeaderboardInfo("name", index));
+                _playersInLeaderBoard.Add(new PlayerLeaderboardInfo("name", index * 1000000000));
             }
             
             _leaderBoardUI.ConstructLeaderBoard(_playersInLeaderBoard);

@@ -29,7 +29,7 @@ public class Wallet : MonoBehaviour
 
    private void Start()
    {
-      BalanceChanged?.Invoke(Money);
+      //BalanceChanged?.Invoke(Money);
    }
    
    public void ChangeMoney(int value)

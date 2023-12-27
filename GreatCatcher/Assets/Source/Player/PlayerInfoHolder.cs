@@ -9,8 +9,8 @@ public class PlayerInfoHolder : MonoBehaviour
 
    public PlayerInfo PlayerInfoStats
    {
-      get { return _playerInfo; }
-      
+      get => _playerInfo;
+
       private set
       {
          if (value != _playerInfo)

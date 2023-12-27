@@ -50,25 +50,13 @@ public class PhysicsMovement : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(direction,Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation,toRotation,maxDegreeDelta);
         }
-        else
+        else if (!_animator.GetBool("IsCatching"))
         {
             _animator.Play("Idle");
         }
-        
+
         Vector3 directionAlongSurface = _surfaceSlider.Project(direction.normalized);
-       // Debug.Log(directionAlongSurface);
         Vector3 offset = directionAlongSurface * (_currentSpeed * Time.deltaTime);
-        // Check for collision before moving
-        // RaycastHit hitInfo;
-        // _isColliding = _rigidbody.SweepTest(offset.normalized, out hitInfo, offset.magnitude);
-        //
-        // if (_isColliding)
-        // {
-        //     Debug.Log($"{_isColliding}");
-        //     // Adjust the offset to stop at the collision point
-        //     offset = offset.normalized * hitInfo.distance;
-        // }
-        
         Vector3 newVectorPosition = _rigidbody.position + offset;
         
         _rigidbody.MovePosition(newVectorPosition);

@@ -28,7 +28,7 @@ public class LevelUpUI : MonoBehaviour
 
     private void OnLevelIncreased()
     {
-        if (_player.Level < _player.MaxLevel - 1)
+        if (_player.Level < Player.MaxLevel - 1)
         {
             _text.text = _playerUpgrader.UpgradePrice.ToString();
         }

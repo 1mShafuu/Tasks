@@ -13,12 +13,15 @@ public class BagUI : MonoBehaviour
     private Bag _bag;
     private Canvas _canvas;
     private float _rotationSpeed = 2000f;
-    
+    private Camera _mainCamera;
+    private float _canvasPercentage = 5f;
+
     private void Awake()
     {
         _bag = GetComponentInParent<Bag>();
         _canvas = GetComponent<Canvas>();
         _notification.alpha = 0;
+        _mainCamera = Camera.main; 
     }
 
     private void OnEnable()
@@ -30,12 +33,11 @@ public class BagUI : MonoBehaviour
     {
         _bag.AnimalsAmountChanged -= OnAnimalsAmountChanged;
     }
-
+    
     private void Update()
     {
-         var rotaionGoal = Quaternion.LookRotation(transform.position - Camera.main.transform.position);
-        // transform.rotation =Quaternion.Lerp(transform.rotation, rotaionGoal,_rotationSpeed * Time.deltaTime);
-         transform.rotation = Quaternion.Slerp(transform.rotation, rotaionGoal,_rotationSpeed * Time.deltaTime);
+         var rotationGoal = Quaternion.LookRotation(transform.position - _mainCamera.transform.position);
+         transform.rotation = Quaternion.Slerp(transform.rotation, rotationGoal,_rotationSpeed * Time.deltaTime);
     }
     
     private void OnAnimalsAmountChanged(int value)

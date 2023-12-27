@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Bull : Animal
+public class Bull : Animal, ICatchable
 {
     private void Awake()
     {

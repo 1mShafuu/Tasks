@@ -8,8 +8,8 @@ using Random = UnityEngine.Random;
 
 public class AnimalSpawner : ObjectPool
 {
-    private const int SpawnRadius = 70;
-    private const int AmountAllowedActiveAnimals = 13;
+    private const int SpawnRadius = 90;
+    private const int AmountAllowedActiveAnimals = 17;
     
     [SerializeField] private List<GameObject> _animalTemplates;
     [SerializeField] private float _spawnCooldown;
@@ -21,6 +21,7 @@ public class AnimalSpawner : ObjectPool
     private int _currentAnimalsAmount;
     private CatchArea _catchArea;
     private GameObject _animal;
+    private Coroutine _coroutine;
 
     private bool CanAddMoreAnimals => _currentAnimalsAmount < AmountAllowedActiveAnimals;
 
@@ -52,7 +53,12 @@ public class AnimalSpawner : ObjectPool
 
     private void Start()
     {
-        StartCoroutine(SpawnChicken());
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+        }
+        
+        _coroutine = StartCoroutine(SpawnChicken());
         
         for (int index = 0; index < AmountAllowedActiveAnimals; index++)
         {
@@ -74,12 +80,18 @@ public class AnimalSpawner : ObjectPool
 
     private void ActivateAnimal()
     {
-        if (TryGetObject(out _animal))
+        if (CanAddMoreAnimals && _animalTemplates.Count > 0)
         {
+            ActivateAnimalFromPool(out _animal);
+
+            if (_animal == null) return;
+            
             const float spawnPositionY = 3f;
             Vector3 spawnPosition = Random.insideUnitSphere * SpawnRadius + transform.position;
             spawnPosition.y = spawnPositionY;
             _animal.SetActive(true);
+            _animal.TryGetComponent(out Animal activatedAnimal);
+            activatedAnimal.ResetCatchStatus();
             _animal.transform.position = spawnPosition;
             _currentAnimalsAmount++;
         }
@@ -90,9 +102,10 @@ public class AnimalSpawner : ObjectPool
         if (_currentAnimalsAmount > 0)
         {
             _currentAnimalsAmount--;
+            DeactivateAnimalInPool(animal);
         }
     }
-    
+
     private IEnumerator SpawnChicken()
     {
         const int secondsInOneMinute = 60;
@@ -101,21 +114,18 @@ public class AnimalSpawner : ObjectPool
         int randomSecondsBetweenSpawn = Random.Range(secondsInOneMinute, secondsInTwoMinutes);
         var waitForSecondsForSpawned = new WaitForSeconds(randomSecondsBetweenSpawn);
         var waitForSecondsBetweenSpawns = new WaitForSeconds(secondsBetweenSpawn);
+       // var waitForSecondsBetweenSpawns = new WaitForSeconds(30f);
         var foundedChicken = GetChicken();
         
         while (true)
         {
             yield return waitForSecondsBetweenSpawns;
 
-            if (foundedChicken != null)
-            {
-                if (foundedChicken.activeSelf == false)
-                {
-                    foundedChicken.SetActive(true);
-                    yield return waitForSecondsForSpawned;
-                    foundedChicken.SetActive(false);
-                }
-            }
+            if (foundedChicken == null) continue;
+            if (foundedChicken.activeSelf) continue;
+            foundedChicken.SetActive(true);
+            yield return waitForSecondsForSpawned;
+            foundedChicken.SetActive(false);
         }
     }
 }

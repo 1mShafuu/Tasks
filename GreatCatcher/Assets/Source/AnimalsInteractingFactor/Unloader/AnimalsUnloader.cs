@@ -7,13 +7,14 @@ public class AnimalsUnloader : MonoBehaviour
 {
     [SerializeField] private GameObject[] _yards;
     [SerializeField] private SellArea _sellArea;
+    [SerializeField] private AnimalTrain _animalTrain;
     
     private Bag _bag;
     private bool _isAbleToUnload = true;
     
     public event Action AnimalUnloaded;
     public event Action<int> YardChose;
-    
+
     private void Awake()
     {
         _bag = GetComponent<Bag>();
@@ -46,7 +47,7 @@ public class AnimalsUnloader : MonoBehaviour
                     var activeYard = yard.transform;
                     activeYard.TryGetComponent(out Yard currentYard);
                     YardChose?.Invoke(currentYard.Level);
-                    Vector3 offset = new Vector3(-6, 5, 6);
+                    Vector3 offset = new Vector3(-4, 2, 7);
                 
                     for (int index = 0; index < amountAnimalsToUnload; index++)
                     { 
@@ -60,12 +61,12 @@ public class AnimalsUnloader : MonoBehaviour
         }
     }
 
-    private void OnAnimalsLimitReached()
+    private void OnAnimalsLimitReached(int value)
     {
         _isAbleToUnload = false;
     }
     
-    private void OnAnimalsLimitNotReached()
+    private void OnAnimalsLimitNotReached(int value)
     {
         _isAbleToUnload = true;
     }

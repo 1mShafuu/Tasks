@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class CatchBar : MonoBehaviour
 {
     private Canvas _canvas;
@@ -47,7 +46,7 @@ public class CatchBar : MonoBehaviour
 
     private void ValueChange(float value, float maxValue)
     {
-        float uncertainty = 0.0000001f;
+        const float uncertainty = 0.0000001f;
         
         if (Math.Abs(value - maxValue) < uncertainty)
         {
@@ -60,6 +59,10 @@ public class CatchBar : MonoBehaviour
     private void OnAnimalDiscovered(GameObject animal)
     {
         animal.TryGetComponent(out CatchArea area);
-        ValueChange(area.ElapsedTime, area.TimeToCatch);
+        
+        if (_container.AnimalToCatch.Level <= area.PlayerLevel)
+        {
+            ValueChange(area.ElapsedTime, area.TimeToCatch);
+        }
     }
 }

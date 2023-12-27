@@ -15,6 +15,8 @@ public class AnimalSeller : MonoBehaviour
     private SellArea _sellArea;
     private bool _isAbleToSell = false;
     private float _animalSelloutPriceModifier = 1;
+
+    public event Action NotAbleToSellNotified;
     
     private void Awake()
     {
@@ -38,11 +40,18 @@ public class AnimalSeller : MonoBehaviour
     {
         var animalsToSell = _sellArea.Animals.ToList();
 
-        if (other.TryGetComponent(out Player player) && animalsToSell.Count > 0 && _isAbleToSell)
+        if (other.TryGetComponent(out Player player))
         {
-            SellAnimals(animalsToSell);
-            _sellArea.ClearDeletedAnimals();
-            _isAbleToSell = false;
+            if (animalsToSell.Count > 0 && _isAbleToSell)
+            {
+                SellAnimals(animalsToSell);
+                _sellArea.ClearDeletedAnimals();
+                _isAbleToSell = false;
+            }
+            else
+            {
+                NotAbleToSellNotified?.Invoke();
+            }
         }
     }
 
@@ -62,7 +71,7 @@ public class AnimalSeller : MonoBehaviour
         _wallet.ChangeMoney(saleAmount);
     }
 
-    private void OnAnimalsLimitReached()
+    private void OnAnimalsLimitReached(int value)
     {
         _isAbleToSell = true;
     }

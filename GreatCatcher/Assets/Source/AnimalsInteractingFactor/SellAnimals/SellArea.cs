@@ -16,9 +16,11 @@ public class SellArea : MonoBehaviour
     private int _maxAmountOfAnimals = 10;
     
     public IReadOnlyList<GameObject> Animals => _animals;
+    public int MaxAmountOfAnimalsInAviary => _maxAmountOfAnimals;
 
-    public event Action AnimalsLimitReached;
-    public event Action AnimalsLimitNotReached;
+    public event Action<int> AnimalsLimitReached;
+    public event Action<int> AnimalsLimitNotReached;
+    public event Action MaxAmountOfAnimalsChanged;
 
     private void OnEnable()
     {
@@ -39,12 +41,12 @@ public class SellArea : MonoBehaviour
             if (_animals.Count < _maxAmountOfAnimals)
             {
                 _animals.Add(animal.gameObject);
-                AnimalsLimitNotReached?.Invoke();
+                AnimalsLimitNotReached?.Invoke(_animals.Count);
             }
             else
             {
                 _animals.Add(animal.gameObject);
-                AnimalsLimitReached?.Invoke();
+                AnimalsLimitReached?.Invoke(_animals.Count);
             }
         }
     }
@@ -53,9 +55,10 @@ public class SellArea : MonoBehaviour
     {
         if (other.TryGetComponent(out Animal exitAnimal))
         {
-            if (_animals.FirstOrDefault(animal => animal=exitAnimal.gameObject))
+            if (_animals.FirstOrDefault(animal => animal == exitAnimal.gameObject))
             {
                 _animals.Remove(exitAnimal.gameObject);
+                AnimalsLimitNotReached?.Invoke(_animals.Count);
             }
         }
     }
@@ -65,7 +68,7 @@ public class SellArea : MonoBehaviour
         if (_animals.All(clearedAnimal => clearedAnimal.activeInHierarchy))
         { 
             _animals.Clear();
-            AnimalsLimitNotReached?.Invoke();
+            AnimalsLimitNotReached?.Invoke(_animals.Count);
         }
     }
 
@@ -77,6 +80,7 @@ public class SellArea : MonoBehaviour
         {
             _currentYardLevel = value;
             _maxAmountOfAnimals *= 2;
+            MaxAmountOfAnimalsChanged?.Invoke();
         }
     }
 

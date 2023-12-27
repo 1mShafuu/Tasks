@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sheep : Animal
+public class Sheep : Animal, ICatchable
 {
     private void Awake()
     {
@@ -15,4 +15,5 @@ public class Sheep : Animal
     {
         return new Wool();
     }
+    
 }
